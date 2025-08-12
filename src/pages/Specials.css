@@ -1,0 +1,612 @@
+/* COMPREHENSIVE CSS SELECTORS - SPECIALS PAGE */
+
+/* 1. COMPLEX PSEUDO-CLASS COMBINATIONS */
+.specials {
+  padding: 2rem 0 4rem;
+  min-height: calc(100vh - 80px);
+  animation: fadeIn 0.8s ease-out;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* 2. ADVANCED ATTRIBUTE SELECTORS */
+[data-price]:before {
+  content: "$";
+  color: #ff6b35;
+  font-weight: bold;
+}
+
+input[type="email" i]:placeholder-shown {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23999' d='M2 4l8 4 8-4v12H2V4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+/* 3. STRUCTURAL PSEUDO-CLASSES WITH COMPLEX FORMULAS */
+.special-item:nth-child(3n+1) {
+  animation-delay: 0.1s;
+  transform: rotate(0.5deg);
+}
+
+.special-item:nth-child(3n+2) {
+  animation-delay: 0.2s;
+  transform: rotate(-0.5deg);
+}
+
+.special-item:nth-child(3n) {
+  animation-delay: 0.3s;
+  transform: rotate(0.2deg);
+}
+
+/* Only child and empty selectors */
+.specials-grid:only-child {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.empty-state:empty::before {
+  content: "No specials available at this time";
+  color: #666;
+  font-style: italic;
+}
+
+/* 4. ADVANCED DESCENDANT AND SIBLING SELECTORS */
+/* Multiple level descendant */
+.specials .container section .specials-grid .special-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  animation: slideUpFadeIn 0.6s ease-out both;
+}
+
+/* Adjacent sibling with state */
+h2 + .specials-grid {
+  margin-top: 2rem;
+}
+
+/* General sibling with pseudo-class */
+.today-specials ~ section {
+  margin-top: 4rem;
+}
+
+/* 5. NEGATION AND FUNCTIONAL PSEUDO-CLASSES */
+.special-item:not(:hover):not(:focus) .special-badge {
+  transform: scale(0.9);
+}
+
+.loyalty-program :is(.tier, .loyalty-tier) {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.loyalty-program :where(.bronze, .silver, .gold, .platinum) {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. PSEUDO-ELEMENTS WITH COMPLEX CONTENT */
+.special-badge::before {
+  content: "🔥 ";
+  font-size: 1.2em;
+}
+
+.special-badge::after {
+  content: " 🔥";
+  font-size: 1.2em;
+}
+
+.savings::before {
+  content: "You save ";
+  font-size: 0.8em;
+  color: #28a745;
+}
+
+.tier-icon::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background: #ff6b35;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* 7. COMPLEX HOVER STATES AND INTERACTIONS */
+.special-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+}
+
+.special-item:hover .special-image img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.special-item:active {
+  transform: translateY(-5px) scale(1.01);
+}
+
+/* 8. SPECIFIC COMPONENT STYLES */
+.specials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  border-radius: 20px;
+  animation: slideInFromTop 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.specials-header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+.specials-header h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.lead {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+/* 9. GRID LAYOUTS WITH COMPLEX PATTERNS */
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* 10. SPECIAL BADGES AND OVERLAYS */
+.special-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
+  animation: bounceIn 0.6s ease-out;
+}
+
+.special-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.special-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.special-content {
+  padding: 2rem;
+}
+
+.special-content h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.special-price,
+.current-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.savings {
+  background: #28a745;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.order-special-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.order-special-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+/* 11. WEEKLY DEALS SECTION */
+.weekly-deals h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+}
+
+.weekly-deals h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  border-radius: 2px;
+}
+
+.deal-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.deal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.deal-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.deal-info {
+  padding: 1.5rem;
+}
+
+.deal-info h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.deal-info p {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.deal-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 12. LOYALTY PROGRAM STYLES */
+.loyalty-program {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.loyalty-program h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.loyalty-intro {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loyalty-tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual tier styles */
+.tier.bronze {
+  background: linear-gradient(135deg, #cd7f32, #8b5a2b);
+  color: white;
+}
+
+.tier.silver {
+  background: linear-gradient(135deg, #c0c0c0, #808080);
+  color: white;
+}
+
+.tier.gold {
+  background: linear-gradient(135deg, #ffd700, #daa520);
+  color: #8b4513;
+}
+
+.tier.platinum {
+  background: linear-gradient(135deg, #e5e4e2, #a8a8a8);
+  color: #2c3e50;
+}
+
+.tier:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.tier-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.tier h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.tier p {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.benefit {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* 13. NEWSLETTER SECTION */
+.newsletter-signup {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.newsletter-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.newsletter-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* 14. RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .specials {
+    padding: 1rem 0 3rem;
+  }
+  
+  .specials-header {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .specials-grid,
+  .deals-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .loyalty-tiers {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .price-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loyalty-tiers {
+    grid-template-columns: 1fr;
+  }
+  
+  .tier {
+    padding: 1.5rem;
+  }
+  
+  .special-content {
+    padding: 1.5rem;
+  }
+}
+
+/* 15. ANIMATIONS */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,510 @@
+/* COMPREHENSIVE CSS SELECTORS DEMONSTRATION */
+
+/* 1. BASIC SELECTORS */
+/* Universal selector */
+* {
+  box-sizing: border-box;
+}
+
+/* Type/Element selector */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Class selector */
+.contact {
+  padding: 2rem 0 4rem;
+  min-height: calc(100vh - 80px);
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* ID selector */
+#contact-form {
+  background: white;
+  border-radius: 15px;
+}
+
+/* 2. ATTRIBUTE SELECTORS */
+/* Exact attribute value */
+input[type="text"] {
+  border: 2px solid #ddd;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+/* Attribute contains value */
+input[type*="email"] {
+  border-color: #007bff;
+}
+
+/* Attribute starts with value */
+input[name^="contact"] {
+  background-color: #f9f9f9;
+}
+
+/* Attribute ends with value */
+input[name$="email"] {
+  color: #333;
+}
+
+/* Attribute contains word */
+input[class~="form-control"] {
+  width: 100%;
+}
+
+/* 3. PSEUDO-CLASS SELECTORS */
+/* Dynamic pseudo-classes */
+.contact-form input:hover {
+  border-color: #ff6b35;
+  transform: translateY(-1px);
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.contact-form input:active {
+  transform: translateY(0);
+}
+
+.contact-form input:valid {
+  border-color: #28a745;
+}
+
+.contact-form input:invalid {
+  border-color: #dc3545;
+}
+
+/* Structural pseudo-classes */
+.info-card:first-child {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+}
+
+.info-card:last-child {
+  border: 2px solid #ff6b35;
+}
+
+.info-card:nth-child(2n) {
+  background: #f8f9fa;
+}
+
+.info-card:nth-child(odd) {
+  margin-right: 1rem;
+}
+
+.info-card:nth-child(3n+1) {
+  transform: scale(1.02);
+}
+
+.form-group:nth-of-type(even) {
+  background: rgba(255, 107, 53, 0.05);
+}
+
+/* Other pseudo-classes */
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-group:empty {
+  display: none;
+}
+
+/* 4. PSEUDO-ELEMENT SELECTORS */
+.contact-header h1::before {
+  content: "📞 ";
+  font-size: 1.2em;
+  margin-right: 0.5rem;
+}
+
+.contact-header h1::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  margin: 1rem auto;
+}
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+  border-radius: 8px 8px 0 0;
+}
+
+.submit-btn::after {
+  content: " →";
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover::after {
+  transform: translateX(5px);
+}
+
+/* First line and first letter */
+.contact-header p::first-line {
+  font-weight: 600;
+  color: #ff6b35;
+}
+
+.info-details p::first-letter {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ff6b35;
+}
+
+/* Selection styling */
+.contact ::selection {
+  background: #ff6b35;
+  color: white;
+}
+
+/* 5. COMBINATOR SELECTORS */
+/* Descendant combinator (space) */
+.contact-content .info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Child combinator (>) */
+.contact-info > .info-card {
+  margin-bottom: 1.5rem;
+}
+
+/* Adjacent sibling combinator (+) */
+.info-icon + .info-details {
+  margin-left: 1rem;
+}
+
+/* General sibling combinator (~) */
+.form-group ~ .form-group {
+  margin-top: 1rem;
+}
+
+/* 6. GROUPING SELECTORS */
+.contact-header,
+.contact-form-container,
+.map-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* 7. SPECIFIC COMPONENT STYLES */
+.contact-header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.lead {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
+}
+
+.info-details h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.info-details p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  position: relative;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.map-section {
+  margin-top: 4rem;
+}
+
+.map-section h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: 2px dashed #ddd;
+  border-radius: 15px;
+  padding: 4rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.map-placeholder:hover {
+  border-color: #ff6b35;
+  background: linear-gradient(135deg, #fff5f0, #ffe8d9);
+}
+
+.map-content h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.map-content p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 8. RESPONSIVE DESIGN WITH MEDIA QUERIES */
+@media screen and (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 1rem 0 3rem;
+  }
+  
+  .contact-header {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+  
+  .info-icon {
+    font-size: 2rem;
+  }
+  
+  .map-placeholder {
+    padding: 2rem 1rem;
+  }
+}
+
+/* 9. PRINT STYLES */
+@media print {
+  .contact {
+    color: black;
+    background: white;
+  }
+  
+  .submit-btn {
+    display: none;
+  }
+  
+  .map-placeholder {
+    border: 1px solid black;
+  }
+}
+
+/* 10. CUSTOM PROPERTIES (CSS Variables) */
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #f7931e;
+  --text-color: #2c3e50;
+  --light-bg: #f8f9fa;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Using CSS variables */
+.contact {
+  --local-padding: 2rem;
+  padding: var(--local-padding) 0 calc(var(--local-padding) * 2);
+}
+
+/* 11. COMPLEX SELECTORS COMBINATIONS */
+/* Multiple pseudo-classes */
+.form-group input:not(:placeholder-shown):valid {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.form-group input:not(:placeholder-shown):invalid {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Negation pseudo-class */
+.info-card:not(:hover) {
+  transition: transform 0.3s ease;
+}
+
+/* Has pseudo-class (where supported) */
+.form-group:has(input:focus) label {
+  color: var(--primary-color);
+}
+
+/* 12. ANIMATION KEYFRAMES */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    transform: translate3d(0,-30px,0);
+  }
+  70% {
+    transform: translate3d(0,-15px,0);
+  }
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

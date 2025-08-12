@@ -1,0 +1,1261 @@
+/* ADVANCED CSS SELECTORS SHOWCASE - REVIEWS PAGE */
+
+/* 1. CSS CUSTOM PROPERTIES AND CALCULATIONS */
+:root {
+  --star-size: 1.2rem;
+  --star-spacing: 0.1rem;
+  --review-border-radius: 15px;
+  --animation-duration: 0.3s;
+  --gold-gradient: linear-gradient(45deg, #ffd700, #ffed4e);
+  --silver-gradient: linear-gradient(45deg, #c0c0c0, #e8e8e8);
+}
+
+/* 2. COMPLEX ATTRIBUTE SELECTORS */
+/* Multi-condition attribute selectors */
+input[type="text"][required]:valid {
+  border-left: 5px solid #28a745;
+}
+
+input[type="text"][required]:invalid:not(:placeholder-shown) {
+  border-left: 5px solid #dc3545;
+}
+
+/* Case-insensitive attribute matching */
+[class*="review" i] {
+  transition: all var(--animation-duration) ease;
+}
+
+/* Attribute value containing substring */
+[data-rating~="verified"] {
+  border: 2px solid #28a745;
+}
+
+/* 3. ADVANCED PSEUDO-CLASS SELECTORS */
+/* Complex nth-child patterns */
+.review-card:nth-child(4n+1) {
+  animation-delay: 0.1s;
+  border-left: 4px solid #ff6b35;
+}
+
+.review-card:nth-child(4n+2) {
+  animation-delay: 0.2s;
+  border-left: 4px solid #28a745;
+}
+
+.review-card:nth-child(4n+3) {
+  animation-delay: 0.3s;
+  border-left: 4px solid #007bff;
+}
+
+.review-card:nth-child(4n) {
+  animation-delay: 0.4s;
+  border-left: 4px solid #ffc107;
+}
+
+/* Target pseudo-class for URL fragments */
+.review-card:target {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  border: 2px solid #ff6b35;
+  transform: scale(1.02);
+}
+
+/* Complex state combinations */
+.star:hover ~ .star,
+.star.filled {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* 4. FUNCTIONAL PSEUDO-CLASSES */
+/* :is() for grouping selectors */
+:is(.review-form, .newsletter-form) input:focus {
+  outline: 3px solid rgba(255, 107, 53, 0.3);
+  outline-offset: 2px;
+}
+
+/* :where() for zero-specificity grouping */
+:where(.review-card, .rating-bar, .feature-card) {
+  border-radius: var(--review-border-radius);
+  transition: all var(--animation-duration) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* :not() with complex selectors */
+.review-card:not(:hover):not(:focus-within) {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* :has() pseudo-class (where supported) */
+.review-card:has(.verified-badge) {
+  background: linear-gradient(135deg, #f8fff8, #e8f5e8);
+}
+
+/* 5. PSEUDO-ELEMENTS WITH COMPLEX CONTENT */
+.verified-badge::before {
+  content: "✓ ";
+  color: #28a745;
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
+
+.star.filled::before {
+  content: "⭐";
+  filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.7));
+}
+
+.star:not(.filled)::before {
+  content: "☆";
+  color: #ddd;
+}
+
+/* Multi-line content with counters */
+.reviews-list {
+  counter-reset: review-counter;
+}
+
+.review-card {
+  counter-increment: review-counter;
+}
+
+.review-card::before {
+  content: "#" counter(review-counter);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+}
+
+/* 6. MAIN COMPONENT STYLES */
+.reviews {
+  padding: 2rem 0 4rem;
+  min-height: calc(100vh - 80px);
+  animation: fadeIn 0.8s ease-out;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 3rem 2rem;
+  background: var(--gold-gradient);
+  color: #8b4513;
+  border-radius: 20px;
+  animation: slideInFromTop 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-header::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd700, #ff6b35);
+  background-size: 400% 400%;
+  border-radius: 22px;
+  z-index: -1;
+  animation: gradientShift 3s ease infinite;
+}
+
+.reviews-header h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.lead {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+/* 7. REVIEWS SUMMARY WITH FLEXBOX AND GRID */
+.reviews-summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.rating-overview {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  border-radius: 15px;
+  position: relative;
+}
+
+.rating-overview::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid #f7931e;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.average-rating {
+  position: relative;
+}
+
+.rating-number {
+  font-size: 4rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.rating-stars {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+/* 8. RATING BREAKDOWN WITH PROGRESS BARS */
+.rating-breakdown {
+  padding: 1rem;
+}
+
+.rating-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.star-label {
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 60px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+  border-radius: 10px;
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.count {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 9. REVIEWS CONTENT LAYOUT */
+.reviews-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reviews-list h2,
+.write-review h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.reviews-list h2::after,
+.write-review h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  border-radius: 2px;
+}
+
+/* 10. INDIVIDUAL REVIEW CARDS */
+.review-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--review-border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  position: relative;
+  animation: slideUpFadeIn 0.6s ease-out both;
+  overflow: hidden;
+}
+
+.review-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.review-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviewer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.reviewer-details h4 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.verified-badge {
+  background: #28a745;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.review-meta {
+  text-align: right;
+}
+
+.review-rating {
+  margin-bottom: 0.5rem;
+}
+
+.star {
+  font-size: var(--star-size);
+  margin-right: var(--star-spacing);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.star.filled {
+  animation: starTwinkle 1s ease-in-out;
+}
+
+.review-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.review-content h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.review-content p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* 11. WRITE REVIEW FORM */
+.write-review {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--review-border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.review-form {
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  position: relative;
+}
+
+.form-group label::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  transition: width 0.3s ease;
+}
+
+.form-group:focus-within label::after {
+  width: 100%;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-review-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-review-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit-review-btn:hover::before {
+  left: 100%;
+}
+
+.submit-review-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+/* 12. RESPONSIVE DESIGN */
+@media (max-width: 968px) {
+  .reviews-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .reviews-summary {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .rating-overview::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews {
+    padding: 1rem 0 3rem;
+  }
+  
+  .reviews-header {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .review-card {
+    padding: 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .review-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .review-meta {
+    text-align: left;
+  }
+  
+  .write-review {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-summary {
+    padding: 1rem;
+  }
+  
+  .rating-breakdown {
+    padding: 0.5rem;
+  }
+  
+  .rating-bar {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .reviewer-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* 13. ANIMATION KEYFRAMES */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 14. ACCESSIBILITY AND PRINT STYLES */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .write-review {
+    display: none;
+  }
+  
+  .review-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .reviews-header {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* 15. ADVANCED BUTTON AND FORM SELECTORS */
+
+/* Button Base Styles with Various Selectors */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0.25rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+/* Attribute Selectors for Button Types */
+.btn[data-action="like"] {
+  background: linear-gradient(135deg, #e91e63, #ad1457);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.btn[data-action="like"]:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+}
+
+.btn[data-action="share"][data-platform="social"] {
+  background: linear-gradient(135deg, #3f51b5, #1a237e);
+  color: white;
+}
+
+.btn[data-action="share"]:hover::before {
+  content: "📱";
+  position: absolute;
+  left: 10px;
+  animation: bounce 0.6s ease infinite;
+}
+
+/* ID Selector for Special Button */
+#newsletter-btn {
+  background: linear-gradient(135deg, #4caf50, #1b5e20);
+  color: white;
+  position: relative;
+}
+
+#newsletter-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+#newsletter-btn:hover::after {
+  left: 100%;
+}
+
+/* Pseudo-class Selectors for Button States */
+.btn:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.btn:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.btn:first-child {
+  margin-left: 0;
+}
+
+.btn:last-child {
+  margin-right: 0;
+}
+
+/* Complex Attribute Selectors */
+.btn[data-action^="filter"] {
+  background: linear-gradient(135deg, #ff9800, #e65100);
+  color: white;
+}
+
+.btn[data-action$="sort"] {
+  background: linear-gradient(135deg, #00bcd4, #006064);
+  color: white;
+}
+
+.btn[data-action*="save"] {
+  background: linear-gradient(135deg, #607d8b, #263238);
+  color: white;
+}
+
+/* Button Animation Classes */
+.btn-hover-effect:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-animated {
+  animation: fadeInUp 0.6s ease both;
+}
+
+.btn-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.btn-pulse {
+  animation: pulse 2s infinite;
+}
+
+.btn-ripple {
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-ripple::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Form Section Styling with Advanced Selectors */
+.form-section[data-section="personal"] {
+  background: linear-gradient(135deg, #f8f9ff, #e3f2fd);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #2196f3;
+}
+
+.form-section[data-section="rating"] {
+  background: linear-gradient(135deg, #fff8e1, #ffecb3);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #ffc107;
+}
+
+.form-section[data-section="review"] {
+  background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #9c27b0;
+}
+
+/* Input Type Selectors */
+input[type="text"].required-field {
+  border-left: 4px solid #f44336;
+}
+
+input[type="text"].required-field:valid {
+  border-left: 4px solid #4caf50;
+}
+
+input[type="email"].optional-field {
+  border-left: 4px solid #2196f3;
+}
+
+input[type="email"]:focus {
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Select Field Styling */
+.select-field[data-validation="required"] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.secondary-select[data-category="experience"] {
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  border: 2px solid #e0e0e0;
+}
+
+/* Checkbox Styling with Advanced Selectors */
+.checkbox-group[data-group="categories"] {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.checkbox-label:hover {
+  background: rgba(255, 107, 53, 0.1);
+  transform: translateX(5px);
+}
+
+.checkbox-input {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.checkbox-input:checked + .checkmark {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  border-color: #ff6b35;
+}
+
+.checkbox-input:checked + .checkmark::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Checkbox with Data Attributes */
+.checkbox-input[data-category="burgers"]:checked + .checkmark {
+  background: linear-gradient(135deg, #ff6b35, #e55100);
+}
+
+.checkbox-input[data-category="pizza"]:checked + .checkmark {
+  background: linear-gradient(135deg, #f44336, #c62828);
+}
+
+.checkbox-input[data-category="drinks"]:checked + .checkmark {
+  background: linear-gradient(135deg, #2196f3, #1565c0);
+}
+
+.checkbox-input[data-category="desserts"]:checked + .checkmark {
+  background: linear-gradient(135deg, #e91e63, #ad1457);
+}
+
+/* Radio Button Styling */
+.radio-group[data-group="recommendation"] {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-mark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.radio-input:checked + .radio-mark {
+  border-color: #ff6b35;
+  background: #ff6b35;
+}
+
+.radio-input:checked + .radio-mark::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-input[data-recommend="yes"]:checked ~ .radio-label {
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.radio-input[data-recommend="maybe"]:checked ~ .radio-label {
+  border-color: #ff9800;
+  background: rgba(255, 152, 0, 0.1);
+}
+
+.radio-input[data-recommend="no"]:checked ~ .radio-label {
+  border-color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.btn-outline-secondary[data-action="reset"] {
+  background: transparent;
+  border: 2px solid #6c757d;
+  color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+  background: #6c757d;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary[data-action="save-draft"] {
+  background: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-submit-primary[data-action="submit"] {
+  background: linear-gradient(135deg, #28a745, #155724);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Newsletter Section */
+.newsletter-section[data-section="newsletter"] {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.newsletter-form[data-form-type="newsletter"] {
+  margin-top: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.newsletter-input {
+  flex: 1;
+  border-radius: 25px 0 0 25px;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.newsletter-btn[data-action="subscribe"] {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  border: none;
+  border-radius: 0 25px 25px 0;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background: linear-gradient(135deg, #e55100, #d84315);
+  transform: translateX(3px);
+}
+
+/* Small Checkbox for Terms */
+.checkbox-label.small {
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.checkmark.small {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-input[data-type="agreement"]:checked + .checkmark.small {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+/* Action Buttons Section */
+.action-buttons-section {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  border: 1px solid #dee2e6;
+}
+
+.action-buttons-section h3 {
+  color: #495057;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.button-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Animation Keyframes for New Elements */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design for New Elements */
+@media (max-width: 768px) {
+  .button-showcase {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  .checkbox-group[data-group="categories"] {
+    grid-template-columns: 1fr;
+  }
+  
+  .radio-group[data-group="recommendation"] {
+    flex-direction: column;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+  }
+  
+  .input-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .newsletter-input,
+  .newsletter-btn {
+    border-radius: 25px;
+  }
+}
+
+/* 16. HIGH CONTRAST MODE */
+@media (prefers-contrast: high) {
+  .review-card {
+    border: 2px solid #000;
+  }
+  
+  .star.filled {
+    color: #000;
+  }
+  
+  .progress-fill {
+    background: #000;
+  }
+  
+  .btn {
+    border: 2px solid #000;
+  }
+  
+  .checkbox-input:checked + .checkmark,
+  .radio-input:checked + .radio-mark {
+    background: #000;
+    border-color: #000;
+  }
+}

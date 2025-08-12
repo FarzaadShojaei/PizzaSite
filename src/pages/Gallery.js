@@ -1,0 +1,188 @@
+import React, { useState } from 'react';
+import './Gallery.css';
+
+const GalleryImage = ({ item }) => {
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  return (
+    <div className="gallery-item">
+      <div className="gallery-image">
+        {!imageError ? (
+          <img 
+            src={item.image} 
+            alt={item.title}
+            onError={handleImageError}
+          />
+        ) : (
+          <div className="gallery-placeholder">
+            <div className="gallery-placeholder-icon">📸</div>
+            <div className="gallery-placeholder-text">{item.title}</div>
+          </div>
+        )}
+        <div className="gallery-overlay">
+          <div className="overlay-content">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Gallery = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const galleryItems = [
+    {
+      id: 1,
+      category: 'food',
+      title: 'Gourmet Burger Deluxe',
+      image: 'https://picsum.photos/400/300?random=101',
+      description: 'Our signature burger with premium ingredients'
+    },
+    {
+      id: 2,
+      category: 'restaurant',
+      title: 'Modern Dining Area',
+      image: 'https://picsum.photos/400/300?random=102',
+      description: 'Comfortable seating with contemporary design'
+    },
+    {
+      id: 3,
+      category: 'food',
+      title: 'Artisan Pizza Collection',
+      image: 'https://picsum.photos/400/300?random=103',
+      description: 'Fresh made pizzas with authentic Italian recipes'
+    },
+    {
+      id: 4,
+      category: 'staff',
+      title: 'Our Kitchen Team',
+      image: 'https://picsum.photos/400/300?random=104',
+      description: 'Professional chefs preparing your meals'
+    },
+    {
+      id: 5,
+      category: 'food',
+      title: 'Fresh Smoothie Bar',
+      image: 'https://picsum.photos/400/300?random=105',
+      description: 'Natural fruit smoothies and healthy drinks'
+    },
+    {
+      id: 6,
+      category: 'restaurant',
+      title: 'Outdoor Seating',
+      image: 'https://picsum.photos/400/300?random=106',
+      description: 'Enjoy your meal in our beautiful patio area'
+    },
+    {
+      id: 7,
+      category: 'food',
+      title: 'Dessert Showcase',
+      image: 'https://picsum.photos/400/300?random=107',
+      description: 'Indulgent desserts and sweet treats'
+    },
+    {
+      id: 8,
+      category: 'events',
+      title: 'Birthday Celebration',
+      image: 'https://picsum.photos/400/300?random=108',
+      description: 'Making special moments memorable'
+    },
+    {
+      id: 9,
+      category: 'food',
+      title: 'Cookie Collection',
+      image: 'https://picsum.photos/400/300?random=109',
+      description: 'Freshly baked cookies daily'
+    },
+    {
+      id: 10,
+      category: 'staff',
+      title: 'Friendly Service',
+      image: 'https://picsum.photos/400/300?random=110',
+      description: 'Our team is here to serve you with a smile'
+    },
+    {
+      id: 11,
+      category: 'restaurant',
+      title: 'Coffee Corner',
+      image: 'https://picsum.photos/400/300?random=111',
+      description: 'Premium coffee and espresso bar'
+    },
+    {
+      id: 12,
+      category: 'events',
+      title: 'Corporate Catering',
+      image: 'https://picsum.photos/400/300?random=112',
+      description: 'Professional catering for business events'
+    }
+  ];
+
+  const categories = [
+    { key: 'all', label: 'All Photos' },
+    { key: 'food', label: 'Food' },
+    { key: 'restaurant', label: 'Restaurant' },
+    { key: 'staff', label: 'Our Team' },
+    { key: 'events', label: 'Events' }
+  ];
+
+  const filteredItems = selectedCategory === 'all' 
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === selectedCategory);
+
+  return (
+    <div className="gallery">
+      <div className="container">
+        <div className="gallery-header">
+          <h1>Photo Gallery</h1>
+          <p className="lead">Take a visual journey through FastBite's delicious world</p>
+        </div>
+
+        <div className="gallery-filters">
+          {categories.map(category => (
+            <button
+              key={category.key}
+              className={`filter-btn ${selectedCategory === category.key ? 'active' : ''}`}
+              onClick={() => setSelectedCategory(category.key)}
+            >
+              {category.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="gallery-grid">
+          {filteredItems.map(item => (
+            <GalleryImage key={item.id} item={item} />
+          ))}
+        </div>
+
+        <div className="gallery-stats">
+          <div className="stat-item">
+            <div className="stat-number">500+</div>
+            <div className="stat-label">Happy Customers Daily</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">50+</div>
+            <div className="stat-label">Menu Items</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">4.8★</div>
+            <div className="stat-label">Average Rating</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number">15+</div>
+            <div className="stat-label">Years of Service</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Gallery;
