@@ -167,247 +167,145 @@ const Reviews = () => {
 
           <div className="write-review">
             <h2>Write a Review</h2>
-            
-            {/* Interactive Buttons Section with Various CSS Selectors */}
-            <div className="action-buttons-section">
-              <h3>Quick Actions</h3>
-              <div className="button-showcase">
-                <button 
-                  type="button" 
-                  className="btn btn-primary btn-hover-effect"
-                  data-action="like"
-                  title="Like this page"
-                >
-                  👍 Like Page
-                </button>
-                
-                <button 
-                  type="button" 
-                  className="btn btn-secondary btn-animated"
-                  data-action="share"
-                  data-platform="social"
-                >
-                  📤 Share Reviews
-                </button>
-                
-                <button 
-                  type="button" 
-                  className="btn btn-success btn-gradient"
-                  data-action="subscribe"
-                  id="newsletter-btn"
-                >
-                  📧 Get Updates
-                </button>
-                
-                <button 
-                  type="button" 
-                  className="btn btn-warning btn-pulse"
-                  data-action="filter"
-                  data-filter="verified"
-                >
-                  ⭐ Show Verified Only
-                </button>
-                
-                <button 
-                  type="button" 
-                  className="btn btn-info btn-ripple"
-                  data-action="sort"
-                  data-sort="recent"
-                >
-                  🔄 Sort by Recent
-                </button>
-              </div>
-            </div>
-
-            {/* Advanced Form with Multiple Input Types */}
-            <form className="review-form advanced-form" onSubmit={handleSubmit}>
-              <div className="form-section" data-section="personal">
-                <h4>Personal Information</h4>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">Your Name *</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={newReview.name}
-                      onChange={handleInputChange}
-                      className="form-control required-field"
-                      data-validation="text"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email (Optional)</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="form-control optional-field"
-                      data-validation="email"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="form-section" data-section="rating">
-                <h4>Your Experience</h4>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="rating">Rating *</label>
-                    <select
-                      id="rating"
-                      name="rating"
-                      value={newReview.rating}
-                      onChange={handleInputChange}
-                      className="form-control select-field"
-                      data-validation="required"
-                      required
-                    >
-                      <option value={5}>5 Stars - Excellent</option>
-                      <option value={4}>4 Stars - Very Good</option>
-                      <option value={3}>3 Stars - Good</option>
-                      <option value={2}>2 Stars - Fair</option>
-                      <option value={1}>1 Star - Poor</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="visit-type">Visit Type</label>
-                    <select 
-                      id="visit-type" 
-                      name="visitType" 
-                      className="form-control secondary-select"
-                      data-category="experience"
-                    >
-                      <option value="dine-in">Dine In</option>
-                      <option value="takeout">Takeout</option>
-                      <option value="delivery">Delivery</option>
-                    </select>
-                  </div>
-                </div>
-
+            <form className="review-form" onSubmit={handleSubmit}>
+              <div className="form-row">
                 <div className="form-group">
-                  <label>Food Categories (Check all that apply)</label>
-                  <div className="checkbox-group" data-group="categories">
-                    <label className="checkbox-label">
-                      <input type="checkbox" name="categories" value="burgers" className="checkbox-input" data-category="burgers" />
-                      <span className="checkmark"></span>
-                      🍔 Burgers
-                    </label>
-                    <label className="checkbox-label">
-                      <input type="checkbox" name="categories" value="pizza" className="checkbox-input" data-category="pizza" />
-                      <span className="checkmark"></span>
-                      🍕 Pizza
-                    </label>
-                    <label className="checkbox-label">
-                      <input type="checkbox" name="categories" value="drinks" className="checkbox-input" data-category="drinks" />
-                      <span className="checkmark"></span>
-                      🥤 Drinks
-                    </label>
-                    <label className="checkbox-label">
-                      <input type="checkbox" name="categories" value="desserts" className="checkbox-input" data-category="desserts" />
-                      <span className="checkmark"></span>
-                      🍰 Desserts
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="form-section" data-section="review">
-                <h4>Your Review</h4>
-                <div className="form-group">
-                  <label htmlFor="title">Review Title *</label>
+                  <label htmlFor="name">Your Name *</label>
                   <input
                     type="text"
-                    id="title"
-                    name="title"
-                    value={newReview.title}
+                    id="name"
+                    name="name"
+                    value={newReview.name}
                     onChange={handleInputChange}
-                    placeholder="Give your review a title..."
-                    className="form-control title-field"
-                    data-validation="text"
                     required
                   />
                 </div>
-
                 <div className="form-group">
-                  <label htmlFor="comment">Your Review *</label>
-                  <textarea
-                    id="comment"
-                    name="comment"
-                    value={newReview.comment}
+                  <label htmlFor="rating">Rating *</label>
+                  <select
+                    id="rating"
+                    name="rating"
+                    value={newReview.rating}
                     onChange={handleInputChange}
-                    placeholder="Tell us about your experience..."
-                    rows="5"
-                    className="form-control textarea-field"
-                    data-validation="text"
                     required
-                  ></textarea>
-                </div>
-
-                <div className="form-group">
-                  <label>Would you recommend us?</label>
-                  <div className="radio-group" data-group="recommendation">
-                    <label className="radio-label">
-                      <input type="radio" name="recommend" value="yes" className="radio-input" data-recommend="yes" defaultChecked />
-                      <span className="radio-mark"></span>
-                      Yes, definitely!
-                    </label>
-                    <label className="radio-label">
-                      <input type="radio" name="recommend" value="maybe" className="radio-input" data-recommend="maybe" />
-                      <span className="radio-mark"></span>
-                      Maybe
-                    </label>
-                    <label className="radio-label">
-                      <input type="radio" name="recommend" value="no" className="radio-input" data-recommend="no" />
-                      <span className="radio-mark"></span>
-                      No
-                    </label>
-                  </div>
+                  >
+                    <option value={5}>5 Stars - Excellent</option>
+                    <option value={4}>4 Stars - Very Good</option>
+                    <option value={3}>3 Stars - Good</option>
+                    <option value={2}>2 Stars - Fair</option>
+                    <option value={1}>1 Star - Poor</option>
+                  </select>
                 </div>
               </div>
 
-              <div className="form-actions">
-                <button type="button" className="btn btn-outline-secondary btn-reset" data-action="reset">
-                  🔄 Reset Form
-                </button>
-                <button type="button" className="btn btn-outline-primary btn-save-draft" data-action="save-draft">
-                  💾 Save Draft
-                </button>
-                <button type="submit" className="submit-review-btn btn-submit-primary" data-action="submit">
-                  📝 Submit Review
-                </button>
+              <div className="form-group">
+                <label htmlFor="title">Review Title *</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  value={newReview.title}
+                  onChange={handleInputChange}
+                  placeholder="Give your review a title..."
+                  required
+                />
               </div>
+
+              <div className="form-group">
+                <label htmlFor="comment">Your Review *</label>
+                <textarea
+                  id="comment"
+                  name="comment"
+                  value={newReview.comment}
+                  onChange={handleInputChange}
+                  placeholder="Tell us about your experience..."
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" className="submit-review-btn">Submit Review</button>
             </form>
-
-            {/* Newsletter Signup Form */}
-            <div className="newsletter-section" data-section="newsletter">
-              <h3>Stay Updated</h3>
-              <form className="newsletter-form inline-form" data-form-type="newsletter">
-                <div className="input-group">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email for updates..." 
-                    className="newsletter-input form-control"
-                    data-validation="email"
-                    required
-                  />
-                  <button type="submit" className="newsletter-btn btn-newsletter" data-action="subscribe">
-                    Subscribe 📧
-                  </button>
-                </div>
-                <div className="form-options">
-                  <label className="checkbox-label small">
-                    <input type="checkbox" name="terms" className="checkbox-input" data-type="agreement" required />
-                    <span className="checkmark small"></span>
-                    I agree to receive email updates
-                  </label>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
+
+        {/* Additional Review Interactive Elements */}
+        <section className="review-interactions">
+          <h2>More Ways to Share</h2>
+          
+          {/* Review Actions */}
+          <div className="review-actions">
+            <button className="btn-filter" data-action="filter" data-rating="5">Show 5-Star Reviews</button>
+            <button id="sort-reviews-btn" data-sort="date">Sort by Date</button>
+            <button className="btn-export" data-export="reviews" type="button">Export Reviews</button>
+            <button className="btn-moderate" data-role="admin" disabled>Moderate Reviews</button>
+          </div>
+
+          {/* Quick Rating Form */}
+          <form className="quick-rating-form" id="quick-rating" data-rating-type="quick">
+            <h3>Quick Rating</h3>
+            <p>Rate your last experience in seconds!</p>
+            <div className="star-rating">
+              <input type="radio" name="quick-rating" value="5" id="star5" />
+              <label for="star5" data-star="5">⭐</label>
+              <input type="radio" name="quick-rating" value="4" id="star4" />
+              <label for="star4" data-star="4">⭐</label>
+              <input type="radio" name="quick-rating" value="3" id="star3" />
+              <label for="star3" data-star="3">⭐</label>
+              <input type="radio" name="quick-rating" value="2" id="star2" />
+              <label for="star2" data-star="2">⭐</label>
+              <input type="radio" name="quick-rating" value="1" id="star1" />
+              <label for="star1" data-star="1">⭐</label>
+            </div>
+            <input type="submit" value="Submit Quick Rating" className="quick-rating-submit" data-submit="quick" />
+          </form>
+
+          {/* Photo Review Form */}
+          <form className="photo-review-form" data-review-type="photo">
+            <h3>Add Photos to Your Review</h3>
+            <input type="file" name="review-photos" multiple accept="image/*" data-upload="photos" />
+            <input type="text" name="photo-caption" placeholder="Describe your photos..." />
+            <div className="photo-options">
+              <label>
+                <input type="checkbox" name="allow-sharing" data-permission="sharing" />
+                Allow FastBite to share my photos
+              </label>
+              <label>
+                <input type="checkbox" name="social-media" data-platform="social" />
+                Post to social media
+              </label>
+            </div>
+            <button type="submit" id="photo-review-submit" className="photo-submit-btn">Upload Photos</button>
+          </form>
+
+          {/* Survey Form */}
+          <div className="customer-survey">
+            <h3>Customer Experience Survey</h3>
+            <form className="survey-form" data-survey="experience" id="customer-survey">
+              <div className="survey-question">
+                <label>How often do you order from FastBite?</label>
+                <select name="frequency" data-question="frequency" required>
+                  <option value="">Select frequency</option>
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="rarely">Rarely</option>
+                </select>
+              </div>
+              <div className="survey-question">
+                <label>What's your favorite menu category?</label>
+                <div className="checkbox-group">
+                  <label><input type="checkbox" name="favorite" value="burgers" data-category="burgers" /> Burgers</label>
+                  <label><input type="checkbox" name="favorite" value="pizza" data-category="pizza" /> Pizza</label>
+                  <label><input type="checkbox" name="favorite" value="drinks" data-category="drinks" /> Drinks</label>
+                  <label><input type="checkbox" name="favorite" value="desserts" data-category="desserts" /> Desserts</label>
+                </div>
+              </div>
+              <textarea name="suggestions" placeholder="Any suggestions for improvement?" rows="3" data-feedback="suggestions"></textarea>
+              <input type="submit" value="Complete Survey" className="survey-submit" data-action="survey" />
+            </form>
+          </div>
+        </section>
       </div>
     </div>
   );

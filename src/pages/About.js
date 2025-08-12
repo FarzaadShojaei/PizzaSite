@@ -103,6 +103,65 @@ const About = () => {
               </div>
             </div>
           </section>
+
+          {/* About Page Interactive Elements */}
+          <section className="about-actions">
+            <h2>Get in Touch with Us</h2>
+            
+            {/* Action Buttons with Different Selectors */}
+            <div className="action-buttons">
+              <button className="btn-outline">Learn More</button>
+              <button id="careers-btn" data-page="careers">Join Our Team</button>
+              <button className="btn-contact" data-action="contact">Contact Us</button>
+              <button type="button" className="btn-franchise" data-category="business">Franchise Opportunities</button>
+            </div>
+
+            {/* Career Application Form */}
+            <form className="career-form" id="career-application" data-form-category="employment">
+              <h3>Quick Career Interest Form</h3>
+              <div className="form-row">
+                <input type="text" name="name" placeholder="Full Name" required />
+                <input type="email" name="email" placeholder="Email Address" required />
+              </div>
+              <select name="position" data-field="position" required>
+                <option value="">Select Position</option>
+                <option value="chef">Chef</option>
+                <option value="server">Server</option>
+                <option value="manager">Manager</option>
+                <option value="delivery">Delivery Driver</option>
+              </select>
+              <textarea name="message" placeholder="Why do you want to work with us?" rows="4"></textarea>
+              <button type="submit" className="submit-career" data-submit-action="career">Submit Application</button>
+            </form>
+
+            {/* Franchise Inquiry Form */}
+            <form className="franchise-form" data-business-type="franchise">
+              <h3>Franchise Inquiry</h3>
+              <input type="text" name="business-name" placeholder="Business Name" />
+              <input type="tel" name="phone" placeholder="Phone Number" />
+              <input type="text" name="location" placeholder="Preferred Location" />
+              <input type="submit" value="Request Information" id="franchise-submit" className="btn-franchise-submit" />
+            </form>
+
+            {/* Newsletter with Advanced Selectors */}
+            <div className="newsletter-section">
+              <h3>Stay Updated</h3>
+              <form className="about-newsletter" data-newsletter-type="updates">
+                <input type="email" name="subscriber-email" placeholder="Enter email for updates..." required />
+                <div className="checkbox-group">
+                  <label>
+                    <input type="checkbox" name="promotions" data-category="marketing" /> 
+                    Promotional offers
+                  </label>
+                  <label>
+                    <input type="checkbox" name="news" data-category="news" /> 
+                    Company news
+                  </label>
+                </div>
+                <button type="submit" data-submit-type="newsletter" className="newsletter-btn">Subscribe to Updates</button>
+              </form>
+            </div>
+          </section>
         </div>
       </div>
     </div>

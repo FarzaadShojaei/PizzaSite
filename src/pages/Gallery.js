@@ -180,6 +180,64 @@ const Gallery = () => {
             <div className="stat-label">Years of Service</div>
           </div>
         </div>
+
+        {/* Gallery Interactive Elements */}
+        <section className="gallery-interactions">
+          <h2>Share Your Experience</h2>
+          
+          {/* Photo Upload Form */}
+          <form className="photo-upload-form" id="customer-photo-form" data-upload-type="customer">
+            <h3>Upload Your FastBite Photo</h3>
+            <input type="file" name="photo" accept="image/*" data-input="file" required />
+            <input type="text" name="caption" placeholder="Add a caption..." />
+            <input type="text" name="instagram" placeholder="Your Instagram handle (optional)" data-social="instagram" />
+            <button type="submit" className="upload-btn" data-action="upload">Share Photo</button>
+          </form>
+
+          {/* Gallery Action Buttons */}
+          <div className="gallery-actions">
+            <button className="btn-download" data-action="download" data-feature="gallery">Download Gallery</button>
+            <button id="share-gallery-btn" className="btn-share">Share Gallery</button>
+            <button className="btn-slideshow" data-mode="slideshow" type="button">Start Slideshow</button>
+            <button className="btn-fullscreen" data-view="fullscreen">View Fullscreen</button>
+          </div>
+
+          {/* Photo Contest Form */}
+          <div className="photo-contest">
+            <h3>Monthly Photo Contest</h3>
+            <p>Submit your best FastBite moment for a chance to win!</p>
+            <form className="contest-form" data-contest="monthly" id="photo-contest">
+              <input type="text" name="participant-name" placeholder="Your Name" required />
+              <input type="email" name="participant-email" placeholder="Email" required />
+              <select name="contest-category" data-category="contest" required>
+                <option value="">Select Category</option>
+                <option value="food">Best Food Shot</option>
+                <option value="ambiance">Restaurant Ambiance</option>
+                <option value="family">Family Moment</option>
+                <option value="creative">Most Creative</option>
+              </select>
+              <textarea name="story" placeholder="Tell us the story behind your photo..." rows="3"></textarea>
+              <div className="contest-terms">
+                <label>
+                  <input type="checkbox" name="terms" data-agreement="terms" required />
+                  I agree to the contest terms and conditions
+                </label>
+              </div>
+              <input type="submit" value="Enter Contest" className="contest-submit" id="contest-entry-btn" />
+            </form>
+          </div>
+
+          {/* Social Media Integration */}
+          <div className="social-integration">
+            <h3>Connect With Us</h3>
+            <div className="social-buttons">
+              <button className="social-btn facebook" data-platform="facebook" data-action="follow">Follow on Facebook</button>
+              <button className="social-btn instagram" data-platform="instagram" data-action="follow">Follow on Instagram</button>
+              <button className="social-btn twitter" data-platform="twitter" data-action="follow">Follow on Twitter</button>
+              <button id="newsletter-social" className="social-btn newsletter" data-action="subscribe">Join Newsletter</button>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

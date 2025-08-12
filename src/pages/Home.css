@@ -195,3 +195,485 @@
     font-size: 1rem;
   }
 }
+
+/* =============================================================================
+   INTERACTIVE ELEMENTS CSS SELECTORS SHOWCASE
+   ============================================================================= */
+
+/* 1. UNIVERSAL SELECTOR */
+.interactive-elements * {
+  transition: all 0.3s ease;
+}
+
+/* 2. TYPE/ELEMENT SELECTORS */
+.interactive-elements button {
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.interactive-elements input {
+  font-family: inherit;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.interactive-elements textarea {
+  font-family: inherit;
+  resize: vertical;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.interactive-elements select {
+  font-family: inherit;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: white;
+}
+
+/* 3. CLASS SELECTORS */
+.interactive-elements {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 4rem 0;
+  margin-top: 3rem;
+}
+
+.interactive-elements h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.button-group {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button-group h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ff6b35;
+  padding-bottom: 0.5rem;
+}
+
+/* Class selector buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6c757d, #545b62);
+  color: white;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc3545, #bd2130);
+  color: white;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 4. ID SELECTORS */
+#unique-btn-1 {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  border: 2px solid #ff6b35;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+#unique-btn-2 {
+  background: transparent;
+  color: #ff6b35;
+  border: 2px solid #ff6b35;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+#special-action-btn {
+  background: linear-gradient(135deg, #6f42c1, #5a32a3);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+#quick-order-form {
+  background: #fff5f0;
+  border: 2px solid #ff6b35;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#feedback-submit {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 5. ATTRIBUTE SELECTORS */
+
+/* Exact attribute value */
+button[data-action="save"] {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+button[data-action="delete"] {
+  background: linear-gradient(135deg, #dc3545, #bd2130);
+  color: white;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Attribute contains value */
+button[data-priority*="high"] {
+  border: 3px solid #ffc107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+button[data-priority*="low"] {
+  opacity: 0.7;
+}
+
+/* Attribute starts with value */
+button[data-category^="navigation"] {
+  background: linear-gradient(135deg, #6610f2, #520dc2);
+  color: white;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Attribute ends with value */
+input[type$="email"] {
+  border-color: #007bff;
+  background: rgba(0, 123, 255, 0.05);
+}
+
+/* Disabled attribute */
+button[disabled] {
+  background: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 6. PSEUDO-CLASS SELECTORS */
+
+/* Hover states */
+.interactive-elements button:hover:not([disabled]) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #545b62, #383d41);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #1e7e34, #155724);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #bd2130, #921925);
+}
+
+/* Focus states */
+.interactive-elements input:focus,
+.interactive-elements select:focus,
+.interactive-elements textarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.interactive-elements button:focus {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
+}
+
+/* Active states */
+.interactive-elements button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Valid and invalid states */
+.interactive-elements input:valid {
+  border-color: #28a745;
+}
+
+.interactive-elements input:invalid:not(:placeholder-shown) {
+  border-color: #dc3545;
+}
+
+/* First and last child */
+.button-group button:first-child {
+  margin-left: 0;
+}
+
+.button-group button:last-child {
+  margin-right: 0;
+}
+
+/* Nth-child selectors */
+.button-group button:nth-child(2n) {
+  border-radius: 15px;
+}
+
+.button-group button:nth-child(odd) {
+  font-style: italic;
+}
+
+/* 7. PSEUDO-ELEMENT SELECTORS */
+#special-action-btn::before {
+  content: "⚡ ";
+  font-size: 1.2em;
+}
+
+#special-action-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+#special-action-btn:hover::after {
+  left: 100%;
+}
+
+.btn-primary::before {
+  content: "👆 ";
+}
+
+.btn-success::after {
+  content: " ✓";
+  color: #90ee90;
+}
+
+/* 8. FORM STYLING */
+.forms-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.forms-section h3 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.newsletter-form,
+.quick-order,
+.feedback-form {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #ff6b35;
+}
+
+.newsletter-form h4,
+.quick-order h4,
+.feedback-form h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Form with data attributes */
+form[data-form-type="newsletter"] {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+form[data-priority="normal"] {
+  border-left-color: #ffc107;
+}
+
+/* Submit button variations */
+.submit-btn {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.newsletter-submit {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+button[data-submit-type="order"] {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+}
+
+/* 9. PSEUDO-CLASS DEMONSTRATION */
+.pseudo-demo {
+  text-align: center;
+}
+
+.hover-demo {
+  background: #6c757d;
+  color: white;
+  margin: 0.5rem;
+}
+
+.hover-demo:hover {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  transform: scale(1.1);
+}
+
+.focus-demo {
+  background: #17a2b8;
+  color: white;
+  margin: 0.5rem;
+}
+
+.focus-demo:focus {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #212529;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+}
+
+.active-demo {
+  background: #6f42c1;
+  color: white;
+  margin: 0.5rem;
+}
+
+.active-demo:active {
+  background: linear-gradient(135deg, #dc3545, #bd2130);
+  transform: scale(0.95);
+}
+
+.disabled-demo {
+  margin: 0.5rem;
+}
+
+/* 10. COMBINATOR SELECTORS */
+
+/* Descendant combinator */
+.interactive-elements .button-group button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Child combinator */
+.forms-section > h3 {
+  border-bottom: 3px solid #ff6b35;
+  padding-bottom: 1rem;
+}
+
+/* Adjacent sibling combinator */
+.newsletter-form + .quick-order {
+  border-top: 2px solid #dee2e6;
+  padding-top: 2rem;
+}
+
+/* General sibling combinator */
+.newsletter-form ~ form {
+  margin-top: 1rem;
+}
+
+/* 11. RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .interactive-elements {
+    padding: 2rem 0;
+  }
+  
+  .button-group {
+    padding: 1rem;
+  }
+  
+  .interactive-elements button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  
+  .forms-section {
+    padding: 1rem;
+  }
+  
+  .newsletter-form,
+  .quick-order,
+  .feedback-form {
+    padding: 1rem;
+  }
+}
+
+/* 12. ANIMATIONS */
+@keyframes buttonPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.btn-primary:hover {
+  animation: buttonPulse 1s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+input:invalid:focus {
+  animation: shake 0.5s ease-in-out;
+}

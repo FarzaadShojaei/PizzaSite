@@ -610,3 +610,408 @@ h2 + .specials-grid {
     transform: translateY(0);
   }
 }
+
+/* =============================================================================
+   SPECIALS PAGE INTERACTIVE ELEMENTS CSS
+   ============================================================================= */
+
+.special-interactions {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 4rem 2rem;
+  margin-top: 3rem;
+  border-radius: 20px;
+}
+
+.special-interactions h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.special-interactions h2::before {
+  content: "🎁 ";
+  font-size: 1.2em;
+}
+
+/* Membership Form */
+.membership-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #6f42c1;
+}
+
+form[data-membership="vip"] h3 {
+  color: #6f42c1;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.membership-form input,
+.membership-form select {
+  padding: 0.75rem;
+  border: 2px solid #6f42c1;
+  border-radius: 8px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.membership-form input:focus,
+.membership-form select:focus {
+  border-color: #5a32a3;
+  box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.1);
+  outline: none;
+}
+
+input[data-input="phone"] {
+  border-color: #17a2b8;
+  background: rgba(23, 162, 184, 0.05);
+}
+
+select[data-tier="selection"] {
+  background: white;
+  border-color: #6f42c1;
+}
+
+.preferences {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #6f42c1;
+}
+
+.preferences h4 {
+  color: #6f42c1;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.preferences label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+input[data-notification],
+input[data-special] {
+  margin-right: 0.5rem;
+  width: auto;
+}
+
+.membership-submit {
+  background: linear-gradient(135deg, #6f42c1, #5a32a3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+button[data-action="join-membership"]:hover {
+  background: linear-gradient(135deg, #5a32a3, #4c2a85);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(111, 66, 193, 0.3);
+}
+
+/* Deal Alert Customization */
+.deal-customization {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 2px solid #007bff;
+}
+
+.deal-customization h3 {
+  color: #0056b3;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.alert-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.food-preferences {
+  margin-bottom: 1.5rem;
+}
+
+.food-preferences h4 {
+  color: #0056b3;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.category-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+
+.category-checkboxes label {
+  display: flex;
+  align-items: center;
+  color: #495057;
+  font-weight: 500;
+}
+
+input[data-food] {
+  margin-right: 0.5rem;
+  width: auto;
+}
+
+.timing-preferences {
+  margin-bottom: 1.5rem;
+}
+
+.timing-preferences label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #0056b3;
+  font-weight: 600;
+}
+
+select[data-timing="preference"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background: white;
+}
+
+.save-preferences {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+#save-alert-prefs:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: scale(1.02);
+}
+
+/* Special Actions */
+.special-actions {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.special-actions h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.special-actions button {
+  margin: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-current-deals {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+button[data-action="view"]:hover {
+  background: linear-gradient(135deg, #20c997, #17a2b8);
+  transform: scale(1.05);
+}
+
+#notify-friends-btn {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+  color: white;
+}
+
+.btn-calendar {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #212529;
+}
+
+button[data-feature="calendar"]:hover {
+  background: linear-gradient(135deg, #e0a800, #d39e00);
+  transform: translateY(-2px);
+}
+
+.btn-favorites {
+  background: linear-gradient(135deg, #dc3545, #bd2130);
+  color: white;
+}
+
+button[data-list="specials"]:hover {
+  background: linear-gradient(135deg, #bd2130, #921925);
+  transform: scale(1.05);
+}
+
+/* Deal Feedback Form */
+.deal-feedback-form {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #ffc107;
+}
+
+form[data-feedback-type="deals"] h3 {
+  color: #856404;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.deal-feedback-form p {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.rating-group {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.rating-group label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #856404;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-direction: row-reverse;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating input[type="radio"] + label {
+  font-size: 2rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.star-rating input[type="radio"]:hover + label,
+.star-rating input[type="radio"]:hover + label ~ label {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+.star-rating input[type="radio"]:checked + label,
+.star-rating input[type="radio"]:checked + label ~ label {
+  color: #ffc107;
+}
+
+input[data-rating="value"] + label {
+  font-size: 1.8rem;
+}
+
+textarea[data-feedback="comments"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+
+.feedback-submit {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #212529;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[data-submit-type="feedback"]:hover {
+  background: linear-gradient(135deg, #e0a800, #d39e00);
+  transform: translateY(-2px);
+}
+
+/* Advanced Selectors for Special Page */
+/* Targeting by attribute pattern */
+input[name*="email"]:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Combining attribute and pseudo-class selectors */
+button[data-action]:hover:not([disabled]) {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for Specials Interactions */
+@media (max-width: 768px) {
+  .special-interactions {
+    padding: 2rem 1rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-checkboxes {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .special-actions button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.5rem auto;
+  }
+  
+  .star-rating {
+    gap: 0.25rem;
+  }
+  
+  .star-rating input[type="radio"] + label {
+    font-size: 1.5rem;
+  }
+}

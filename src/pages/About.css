@@ -224,3 +224,308 @@
     padding: 1.5rem;
   }
 }
+
+/* =============================================================================
+   ABOUT PAGE INTERACTIVE ELEMENTS CSS
+   ============================================================================= */
+
+.about-actions {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin-top: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-actions h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.about-actions h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* Action Buttons with Various Selectors */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ff6b35;
+  border: 2px solid #ff6b35;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #ff6b35;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+#careers-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+#careers-btn::before {
+  content: "💼 ";
+  font-size: 1.2em;
+}
+
+.btn-contact {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-contact::after {
+  content: " 📞";
+}
+
+button[data-category="business"] {
+  background: linear-gradient(135deg, #6f42c1, #5a32a3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button[data-category="business"]:hover {
+  background: linear-gradient(135deg, #5a32a3, #4c2a85);
+  transform: scale(1.05);
+}
+
+/* Career Form Styling */
+.career-form {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 2px solid #28a745;
+}
+
+.career-form h3 {
+  color: #28a745;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.career-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.career-form input,
+.career-form select,
+.career-form textarea {
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.career-form input:focus,
+.career-form select:focus,
+.career-form textarea:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+  outline: none;
+}
+
+select[data-field="position"] {
+  background: white;
+  border-color: #28a745;
+}
+
+.submit-career {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+button[data-submit-action="career"]:hover {
+  background: linear-gradient(135deg, #20c997, #17a2b8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+/* Franchise Form */
+.franchise-form {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 5px solid #ffc107;
+}
+
+form[data-business-type="franchise"] h3 {
+  color: #856404;
+  margin-bottom: 1.5rem;
+}
+
+.franchise-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  background: white;
+}
+
+.franchise-form input:focus {
+  border-color: #e0a800;
+  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+  outline: none;
+}
+
+#franchise-submit {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #212529;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-franchise-submit:hover {
+  background: linear-gradient(135deg, #e0a800, #d39e00);
+  transform: scale(1.02);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #007bff;
+}
+
+.newsletter-section h3 {
+  color: #0056b3;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about-newsletter {
+  text-align: center;
+}
+
+input[name="subscriber-email"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 25px;
+  text-align: center;
+  background: white;
+}
+
+.checkbox-group {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  color: #0056b3;
+  font-weight: 500;
+}
+
+.newsletter-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[data-submit-type="newsletter"]:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive Design for About Page Interactive Elements */
+@media (max-width: 768px) {
+  .about-actions {
+    padding: 2rem 1rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-buttons button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .career-form .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .checkbox-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

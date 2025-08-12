@@ -157,6 +157,89 @@ const Specials = () => {
             </form>
           </div>
         </section>
+
+        {/* Special Offers Interactive Elements */}
+        <section className="special-interactions">
+          <h2>Exclusive Member Benefits</h2>
+          
+          {/* Membership Signup Form */}
+          <form className="membership-form" id="vip-membership" data-membership="vip">
+            <h3>Join VIP Membership</h3>
+            <div className="form-grid">
+              <input type="text" name="first-name" placeholder="First Name" required />
+              <input type="text" name="last-name" placeholder="Last Name" required />
+              <input type="email" name="member-email" placeholder="Email Address" required />
+              <input type="tel" name="phone" placeholder="Phone Number" data-input="phone" />
+            </div>
+            <select name="membership-tier" data-tier="selection" required>
+              <option value="">Select Membership Tier</option>
+              <option value="bronze">Bronze - 5% off</option>
+              <option value="silver">Silver - 10% off</option>
+              <option value="gold">Gold - 15% off</option>
+              <option value="platinum">Platinum - 20% off</option>
+            </select>
+            <div className="preferences">
+              <h4>Notification Preferences</h4>
+              <label><input type="checkbox" name="email-deals" data-notification="email" /> Email deals</label>
+              <label><input type="checkbox" name="sms-alerts" data-notification="sms" /> SMS alerts</label>
+              <label><input type="checkbox" name="birthday-offers" data-special="birthday" /> Birthday offers</label>
+            </div>
+            <button type="submit" className="membership-submit" data-action="join-membership">Join VIP Club</button>
+          </form>
+
+          {/* Deal Alert Customization */}
+          <div className="deal-customization">
+            <h3>Customize Your Deal Alerts</h3>
+            <form className="alert-form" data-alert-type="custom" id="deal-alerts">
+              <div className="food-preferences">
+                <h4>Food Categories</h4>
+                <div className="category-checkboxes">
+                  <label><input type="checkbox" name="alerts" value="burgers" data-food="burgers" /> Burger Deals</label>
+                  <label><input type="checkbox" name="alerts" value="pizza" data-food="pizza" /> Pizza Specials</label>
+                  <label><input type="checkbox" name="alerts" value="drinks" data-food="drinks" /> Drink Offers</label>
+                  <label><input type="checkbox" name="alerts" value="desserts" data-food="desserts" /> Dessert Deals</label>
+                </div>
+              </div>
+              <div className="timing-preferences">
+                <label>Preferred deal times:</label>
+                <select name="deal-timing" data-timing="preference">
+                  <option value="morning">Morning (8AM-12PM)</option>
+                  <option value="afternoon">Afternoon (12PM-5PM)</option>
+                  <option value="evening">Evening (5PM-9PM)</option>
+                  <option value="anytime">Anytime</option>
+                </select>
+              </div>
+              <input type="submit" value="Save Preferences" className="save-preferences" id="save-alert-prefs" />
+            </form>
+          </div>
+
+          {/* Special Actions */}
+          <div className="special-actions">
+            <h3>Quick Actions</h3>
+            <button className="btn-current-deals" data-action="view" data-category="current">View Current Deals</button>
+            <button id="notify-friends-btn" className="btn-share-deals" data-action="share">Share Deals with Friends</button>
+            <button className="btn-calendar" data-feature="calendar" type="button">Add to Calendar</button>
+            <button className="btn-favorites" data-action="favorite" data-list="specials">Save to Favorites</button>
+          </div>
+
+          {/* Feedback on Deals */}
+          <form className="deal-feedback-form" data-feedback-type="deals">
+            <h3>Rate Our Deals</h3>
+            <p>Help us improve by rating today's specials!</p>
+            <div className="rating-group">
+              <label>Deal Value:</label>
+              <div className="star-rating">
+                <input type="radio" name="value-rating" value="5" data-rating="value" />
+                <input type="radio" name="value-rating" value="4" data-rating="value" />
+                <input type="radio" name="value-rating" value="3" data-rating="value" />
+                <input type="radio" name="value-rating" value="2" data-rating="value" />
+                <input type="radio" name="value-rating" value="1" data-rating="value" />
+              </div>
+            </div>
+            <textarea name="deal-comments" placeholder="Comments about today's deals..." rows="3" data-feedback="comments"></textarea>
+            <button type="submit" className="feedback-submit" data-submit-type="feedback">Submit Feedback</button>
+          </form>
+        </section>
       </div>
     </div>
   );

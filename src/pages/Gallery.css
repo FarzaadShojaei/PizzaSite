@@ -490,3 +490,326 @@ img[alt*="food" i] {
     border: 0 !important;
   }
 }
+
+/* =============================================================================
+   GALLERY PAGE INTERACTIVE ELEMENTS CSS
+   ============================================================================= */
+
+.gallery-interactions {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 4rem 2rem;
+  margin-top: 3rem;
+  border-radius: 20px;
+}
+
+.gallery-interactions h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.gallery-interactions h2::before {
+  content: "📸 ";
+  font-size: 1.2em;
+}
+
+/* Photo Upload Form */
+.photo-upload-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #17a2b8;
+}
+
+form[data-upload-type="customer"] h3 {
+  color: #17a2b8;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+input[data-input="file"] {
+  width: 100%;
+  padding: 1rem;
+  border: 2px dashed #17a2b8;
+  border-radius: 8px;
+  background: #f8f9fa;
+  margin-bottom: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[data-social="instagram"] {
+  border-color: #e4405f;
+  background: rgba(228, 64, 95, 0.05);
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+button[data-action="upload"]:hover {
+  background: linear-gradient(135deg, #138496, #117a8b);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(23, 162, 184, 0.3);
+}
+
+/* Gallery Action Buttons */
+.gallery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.btn-download {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[data-action="download"]:hover {
+  background: linear-gradient(135deg, #20c997, #17a2b8);
+  transform: scale(1.05);
+}
+
+#share-gallery-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-slideshow {
+  background: linear-gradient(135deg, #6f42c1, #5a32a3);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button[data-view="fullscreen"] {
+  background: linear-gradient(135deg, #fd7e14, #e55a00);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Photo Contest */
+.photo-contest {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 3px solid #ffc107;
+}
+
+.photo-contest h3 {
+  color: #856404;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.photo-contest p {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.contest-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+form[data-contest="monthly"] input,
+form[data-contest="monthly"] select,
+form[data-contest="monthly"] textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+select[data-category="contest"] {
+  background: white;
+  border-color: #e0a800;
+}
+
+.contest-terms {
+  margin: 1rem 0;
+}
+
+.contest-terms label {
+  display: flex;
+  align-items: center;
+  color: #856404;
+  font-weight: 500;
+}
+
+input[data-agreement="terms"] {
+  width: auto;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+}
+
+.contest-submit {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #212529;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+#contest-entry-btn:hover {
+  background: linear-gradient(135deg, #e0a800, #d39e00);
+  transform: scale(1.02);
+}
+
+/* Social Media Integration */
+.social-integration {
+  text-align: center;
+}
+
+.social-integration h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-btn {
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-btn.facebook {
+  background: linear-gradient(135deg, #3b5998, #2d4373);
+  color: white;
+}
+
+button[data-platform="facebook"]:hover {
+  background: linear-gradient(135deg, #2d4373, #1e2a4a);
+  transform: translateY(-3px);
+}
+
+.social-btn.instagram {
+  background: linear-gradient(135deg, #e4405f, #c13584);
+  color: white;
+}
+
+button[data-platform="instagram"]:hover {
+  background: linear-gradient(135deg, #c13584, #833ab4);
+  transform: translateY(-3px);
+}
+
+.social-btn.twitter {
+  background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+  color: white;
+}
+
+button[data-platform="twitter"]:hover {
+  background: linear-gradient(135deg, #0d8bd9, #0a6bb3);
+  transform: translateY(-3px);
+}
+
+#newsletter-social {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+}
+
+.social-btn.newsletter:hover {
+  background: linear-gradient(135deg, #f7931e, #e57c00);
+  transform: translateY(-3px);
+}
+
+/* Pseudo-elements for social buttons */
+.social-btn.facebook::before {
+  content: "📘 ";
+}
+
+.social-btn.instagram::before {
+  content: "📷 ";
+}
+
+.social-btn.twitter::before {
+  content: "🐦 ";
+}
+
+.social-btn.newsletter::before {
+  content: "📧 ";
+}
+
+/* Responsive Design for Gallery Interactions */
+@media (max-width: 768px) {
+  .gallery-interactions {
+    padding: 2rem 1rem;
+  }
+  
+  .gallery-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .gallery-actions button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}

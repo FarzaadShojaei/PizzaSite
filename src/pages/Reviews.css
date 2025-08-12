@@ -699,543 +699,7 @@ input[type="text"][required]:invalid:not(:placeholder-shown) {
   }
 }
 
-/* 15. ADVANCED BUTTON AND FORM SELECTORS */
-
-/* Button Base Styles with Various Selectors */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  margin: 0.25rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  text-transform: capitalize;
-}
-
-/* Attribute Selectors for Button Types */
-.btn[data-action="like"] {
-  background: linear-gradient(135deg, #e91e63, #ad1457);
-  color: white;
-  border: 2px solid transparent;
-}
-
-.btn[data-action="like"]:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
-}
-
-.btn[data-action="share"][data-platform="social"] {
-  background: linear-gradient(135deg, #3f51b5, #1a237e);
-  color: white;
-}
-
-.btn[data-action="share"]:hover::before {
-  content: "📱";
-  position: absolute;
-  left: 10px;
-  animation: bounce 0.6s ease infinite;
-}
-
-/* ID Selector for Special Button */
-#newsletter-btn {
-  background: linear-gradient(135deg, #4caf50, #1b5e20);
-  color: white;
-  position: relative;
-}
-
-#newsletter-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-#newsletter-btn:hover::after {
-  left: 100%;
-}
-
-/* Pseudo-class Selectors for Button States */
-.btn:nth-child(odd) {
-  animation-delay: 0.1s;
-}
-
-.btn:nth-child(even) {
-  animation-delay: 0.2s;
-}
-
-.btn:first-child {
-  margin-left: 0;
-}
-
-.btn:last-child {
-  margin-right: 0;
-}
-
-/* Complex Attribute Selectors */
-.btn[data-action^="filter"] {
-  background: linear-gradient(135deg, #ff9800, #e65100);
-  color: white;
-}
-
-.btn[data-action$="sort"] {
-  background: linear-gradient(135deg, #00bcd4, #006064);
-  color: white;
-}
-
-.btn[data-action*="save"] {
-  background: linear-gradient(135deg, #607d8b, #263238);
-  color: white;
-}
-
-/* Button Animation Classes */
-.btn-hover-effect:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.btn-animated {
-  animation: fadeInUp 0.6s ease both;
-}
-
-.btn-gradient {
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
-}
-
-.btn-pulse {
-  animation: pulse 2s infinite;
-}
-
-.btn-ripple {
-  overflow: hidden;
-  position: relative;
-}
-
-.btn-ripple::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.btn-ripple:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-/* Form Section Styling with Advanced Selectors */
-.form-section[data-section="personal"] {
-  background: linear-gradient(135deg, #f8f9ff, #e3f2fd);
-  padding: 2rem;
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  border-left: 4px solid #2196f3;
-}
-
-.form-section[data-section="rating"] {
-  background: linear-gradient(135deg, #fff8e1, #ffecb3);
-  padding: 2rem;
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  border-left: 4px solid #ffc107;
-}
-
-.form-section[data-section="review"] {
-  background: linear-gradient(135deg, #f3e5f5, #e1bee7);
-  padding: 2rem;
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  border-left: 4px solid #9c27b0;
-}
-
-/* Input Type Selectors */
-input[type="text"].required-field {
-  border-left: 4px solid #f44336;
-}
-
-input[type="text"].required-field:valid {
-  border-left: 4px solid #4caf50;
-}
-
-input[type="email"].optional-field {
-  border-left: 4px solid #2196f3;
-}
-
-input[type="email"]:focus {
-  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
-}
-
-/* Select Field Styling */
-.select-field[data-validation="required"] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  background-position: right 0.5rem center;
-  background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  padding-right: 2.5rem;
-}
-
-.secondary-select[data-category="experience"] {
-  background: linear-gradient(135deg, #ffffff, #f5f5f5);
-  border: 2px solid #e0e0e0;
-}
-
-/* Checkbox Styling with Advanced Selectors */
-.checkbox-group[data-group="categories"] {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 0.75rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.checkbox-label:hover {
-  background: rgba(255, 107, 53, 0.1);
-  transform: translateX(5px);
-}
-
-.checkbox-input {
-  display: none;
-}
-
-.checkmark {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  margin-right: 0.75rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.checkbox-input:checked + .checkmark {
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
-  border-color: #ff6b35;
-}
-
-.checkbox-input:checked + .checkmark::after {
-  content: "✓";
-  position: absolute;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Checkbox with Data Attributes */
-.checkbox-input[data-category="burgers"]:checked + .checkmark {
-  background: linear-gradient(135deg, #ff6b35, #e55100);
-}
-
-.checkbox-input[data-category="pizza"]:checked + .checkmark {
-  background: linear-gradient(135deg, #f44336, #c62828);
-}
-
-.checkbox-input[data-category="drinks"]:checked + .checkmark {
-  background: linear-gradient(135deg, #2196f3, #1565c0);
-}
-
-.checkbox-input[data-category="desserts"]:checked + .checkmark {
-  background: linear-gradient(135deg, #e91e63, #ad1457);
-}
-
-/* Radio Button Styling */
-.radio-group[data-group="recommendation"] {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.radio-label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 0.75rem 1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.radio-input {
-  display: none;
-}
-
-.radio-mark {
-  width: 18px;
-  height: 18px;
-  border: 2px solid #ddd;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.radio-input:checked + .radio-mark {
-  border-color: #ff6b35;
-  background: #ff6b35;
-}
-
-.radio-input:checked + .radio-mark::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.radio-input[data-recommend="yes"]:checked ~ .radio-label {
-  border-color: #4caf50;
-  background: rgba(76, 175, 80, 0.1);
-}
-
-.radio-input[data-recommend="maybe"]:checked ~ .radio-label {
-  border-color: #ff9800;
-  background: rgba(255, 152, 0, 0.1);
-}
-
-.radio-input[data-recommend="no"]:checked ~ .radio-label {
-  border-color: #f44336;
-  background: rgba(244, 67, 54, 0.1);
-}
-
-/* Form Actions */
-.form-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 2px solid #e0e0e0;
-}
-
-.btn-outline-secondary[data-action="reset"] {
-  background: transparent;
-  border: 2px solid #6c757d;
-  color: #6c757d;
-}
-
-.btn-outline-secondary:hover {
-  background: #6c757d;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.btn-outline-primary[data-action="save-draft"] {
-  background: transparent;
-  border: 2px solid #007bff;
-  color: #007bff;
-}
-
-.btn-outline-primary:hover {
-  background: #007bff;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.btn-submit-primary[data-action="submit"] {
-  background: linear-gradient(135deg, #28a745, #155724);
-  color: white;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-}
-
-/* Newsletter Section */
-.newsletter-section[data-section="newsletter"] {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  padding: 2rem;
-  border-radius: 15px;
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.newsletter-form[data-form-type="newsletter"] {
-  margin-top: 1.5rem;
-}
-
-.input-group {
-  display: flex;
-  gap: 0;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.newsletter-input {
-  flex: 1;
-  border-radius: 25px 0 0 25px;
-  border: none;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-}
-
-.newsletter-btn[data-action="subscribe"] {
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
-  border: none;
-  border-radius: 0 25px 25px 0;
-  padding: 1rem 1.5rem;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.newsletter-btn:hover {
-  background: linear-gradient(135deg, #e55100, #d84315);
-  transform: translateX(3px);
-}
-
-/* Small Checkbox for Terms */
-.checkbox-label.small {
-  justify-content: center;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-.checkmark.small {
-  width: 16px;
-  height: 16px;
-}
-
-.checkbox-input[data-type="agreement"]:checked + .checkmark.small {
-  background: #4caf50;
-  border-color: #4caf50;
-}
-
-/* Action Buttons Section */
-.action-buttons-section {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  padding: 2rem;
-  border-radius: 15px;
-  margin-bottom: 3rem;
-  border: 1px solid #dee2e6;
-}
-
-.action-buttons-section h3 {
-  color: #495057;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.button-showcase {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-/* Animation Keyframes for New Elements */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design for New Elements */
-@media (max-width: 768px) {
-  .button-showcase {
-    flex-direction: column;
-  }
-  
-  .btn {
-    width: 100%;
-    margin: 0.5rem 0;
-  }
-  
-  .checkbox-group[data-group="categories"] {
-    grid-template-columns: 1fr;
-  }
-  
-  .radio-group[data-group="recommendation"] {
-    flex-direction: column;
-  }
-  
-  .form-actions {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .form-actions .btn {
-    width: 100%;
-  }
-  
-  .input-group {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .newsletter-input,
-  .newsletter-btn {
-    border-radius: 25px;
-  }
-}
-
-/* 16. HIGH CONTRAST MODE */
+/* 15. HIGH CONTRAST MODE */
 @media (prefers-contrast: high) {
   .review-card {
     border: 2px solid #000;
@@ -1248,14 +712,357 @@ input[type="email"]:focus {
   .progress-fill {
     background: #000;
   }
-  
-  .btn {
-    border: 2px solid #000;
+}
+
+/* =============================================================================
+   REVIEWS PAGE INTERACTIVE ELEMENTS CSS
+   ============================================================================= */
+
+.review-interactions {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin-top: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.review-interactions h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.review-interactions h2::before {
+  content: "💬 ";
+  font-size: 1.2em;
+}
+
+/* Review Action Buttons */
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.btn-filter {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #212529;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[data-action="filter"]:hover {
+  background: linear-gradient(135deg, #e0a800, #d39e00);
+  transform: scale(1.05);
+}
+
+#sort-reviews-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-export {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button[data-export="reviews"]:hover {
+  background: linear-gradient(135deg, #20c997, #17a2b8);
+  transform: translateY(-2px);
+}
+
+.btn-moderate {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Quick Rating Form */
+.quick-rating-form {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 2px solid #007bff;
+  text-align: center;
+}
+
+form[data-rating-type="quick"] h3 {
+  color: #0056b3;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  flex-direction: row-reverse;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+  color: #ffc107;
+}
+
+label[data-star] {
+  position: relative;
+}
+
+label[data-star]:hover::after {
+  content: attr(data-star) " Stars";
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c3e50;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.quick-rating-submit {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+input[data-submit="quick"]:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+}
+
+/* Photo Review Form */
+.photo-review-form {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 2px solid #6c757d;
+}
+
+form[data-review-type="photo"] h3 {
+  color: #495057;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+input[data-upload="photos"] {
+  width: 100%;
+  padding: 1rem;
+  border: 2px dashed #6c757d;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.photo-options {
+  margin: 1rem 0;
+}
+
+.photo-options label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+input[data-permission="sharing"],
+input[data-platform="social"] {
+  margin-right: 0.5rem;
+  width: auto;
+}
+
+.photo-submit-btn {
+  background: linear-gradient(135deg, #6c757d, #545b62);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+#photo-review-submit:hover {
+  background: linear-gradient(135deg, #545b62, #383d41);
+  transform: scale(1.02);
+}
+
+/* Customer Survey */
+.customer-survey {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #ffc107;
+}
+
+.customer-survey h3 {
+  color: #856404;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.survey-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.survey-question {
+  margin-bottom: 1.5rem;
+}
+
+.survey-question label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #856404;
+  font-weight: 600;
+}
+
+select[data-question="frequency"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  background: white;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  color: #495057;
+  font-weight: normal;
+}
+
+input[data-category] {
+  margin-right: 0.5rem;
+  width: auto;
+}
+
+textarea[data-feedback="suggestions"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.survey-submit {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #212529;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[data-action="survey"]:hover {
+  background: linear-gradient(135deg, #e0a800, #d39e00);
+  transform: translateY(-2px);
+}
+
+/* Advanced Attribute Selectors */
+/* Targeting inputs by name pattern */
+input[name^="quick-"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Targeting by multiple attributes */
+input[type="checkbox"][data-category]:checked + label {
+  color: #28a745;
+  font-weight: 600;
+}
+
+/* Responsive Design for Review Interactions */
+@media (max-width: 768px) {
+  .review-interactions {
+    padding: 2rem 1rem;
   }
   
-  .checkbox-input:checked + .checkmark,
-  .radio-input:checked + .radio-mark {
-    background: #000;
-    border-color: #000;
+  .review-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .review-actions button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .star-rating {
+    gap: 0.25rem;
+  }
+  
+  .star-rating label {
+    font-size: 1.5rem;
+  }
+  
+  .checkbox-group {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
