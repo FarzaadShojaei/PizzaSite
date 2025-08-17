@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import DownloadButton from '../components/DownloadButton';
+import ErrorButton from '../components/ErrorButton';
 import './Gallery.css';
 
 const GalleryImage = ({ item }) => {
@@ -196,7 +198,22 @@ const Gallery = () => {
 
           {/* Gallery Action Buttons */}
           <div className="gallery-actions">
-            <button className="btn-download" data-action="download" data-feature="gallery">Download Gallery</button>
+            <DownloadButton
+              fileName="gallery-photos.jpg"
+              filePath="/images/gallery-photos.jpg"
+              buttonText="Download Gallery"
+              variant="primary"
+              size="medium"
+              icon="📸"
+            />
+            <DownloadButton
+              fileName="fastbite-menu.jpg"
+              filePath="/images/restaurant-menu.jpg"
+              buttonText="Download Menu"
+              variant="secondary"
+              size="medium"
+              icon="🍽️"
+            />
             <button id="share-gallery-btn" className="btn-share">Share Gallery</button>
             <button className="btn-slideshow" data-mode="slideshow" type="button">Start Slideshow</button>
             <button className="btn-fullscreen" data-view="fullscreen">View Fullscreen</button>
@@ -235,6 +252,26 @@ const Gallery = () => {
               <button className="social-btn instagram" data-platform="instagram" data-action="follow">Follow on Instagram</button>
               <button className="social-btn twitter" data-platform="twitter" data-action="follow">Follow on Twitter</button>
               <button id="newsletter-social" className="social-btn newsletter" data-action="subscribe">Join Newsletter</button>
+            </div>
+          </div>
+
+          {/* Gallery Error Testing */}
+          <div className="error-section">
+            <h3>🎨 Gallery Error Testing</h3>
+            <p>Test error scenarios specific to gallery and image handling:</p>
+            
+            <div className="error-button-group">
+              <h4>Image & Media Errors</h4>
+              <ErrorButton errorType="networkError" buttonText="Image Load Error" variant="danger" size="small" />
+              <ErrorButton errorType="api404" buttonText="Missing Image API" variant="warning" size="small" />
+              <ErrorButton errorType="memoryError" buttonText="Large Image Memory" variant="outline" size="small" />
+            </div>
+
+            <div className="error-button-group">
+              <h4>Gallery State Errors</h4>
+              <ErrorButton errorType="stateError" buttonText="Gallery State Error" variant="dark" size="small" />
+              <ErrorButton errorType="renderError" buttonText="Gallery Render Error" variant="danger" size="small" />
+              <ErrorButton errorType="validationError" buttonText="Upload Validation" variant="dark" size="small" />
             </div>
           </div>
         </section>

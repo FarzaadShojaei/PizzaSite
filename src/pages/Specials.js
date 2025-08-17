@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuItem from '../components/MenuItem';
+import ErrorButton from '../components/ErrorButton';
 import './Specials.css';
 
 const Specials = () => {
@@ -239,6 +240,27 @@ const Specials = () => {
             <textarea name="deal-comments" placeholder="Comments about today's deals..." rows="3" data-feedback="comments"></textarea>
             <button type="submit" className="feedback-submit" data-submit-type="feedback">Submit Feedback</button>
           </form>
+
+          {/* Specials Page Error Testing */}
+          <div className="error-section">
+            <h3>🎯 Specials Page Error Testing</h3>
+            <p>Test error scenarios for deals and special offers:</p>
+            
+            <div className="error-button-group">
+              <h4>Deal & Pricing Errors</h4>
+              <ErrorButton errorType="validationError" buttonText="Deal Validation Error" variant="warning" size="small" />
+              <ErrorButton errorType="api404" buttonText="Deal Not Found" variant="danger" size="small" />
+              <ErrorButton errorType="permissionError" buttonText="Deal Access Denied" variant="dark" size="small" />
+              <ErrorButton errorType="timeout" buttonText="Deal Load Timeout" variant="outline" size="small" />
+            </div>
+
+            <div className="error-button-group">
+              <h4>Shopping & Cart Errors</h4>
+              <ErrorButton errorType="stateError" buttonText="Cart State Error" variant="dark" size="small" />
+              <ErrorButton errorType="storageError" buttonText="Cart Storage Error" variant="outline" size="small" />
+              <ErrorButton errorType="networkError" buttonText="Checkout Error" variant="danger" size="small" />
+            </div>
+          </div>
         </section>
       </div>
     </div>

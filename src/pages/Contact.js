@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ErrorButton from '../components/ErrorButton';
 import './Contact.css';
 
 const Contact = () => {
@@ -165,6 +166,27 @@ const Contact = () => {
               <p>123 Food Street, Taste City, TC 12345</p>
               <p>Click here to open in Google Maps</p>
             </div>
+          </div>
+        </div>
+
+        {/* Contact Page Error Testing */}
+        <div className="error-section">
+          <h3>📞 Contact Page Error Testing</h3>
+          <p>Test error scenarios for contact forms and communication:</p>
+          
+          <div className="error-button-group">
+            <h4>Form & Communication Errors</h4>
+            <ErrorButton errorType="validationError" buttonText="Form Validation Error" variant="warning" size="small" />
+            <ErrorButton errorType="networkError" buttonText="Form Submit Error" variant="danger" size="small" />
+            <ErrorButton errorType="api500" buttonText="Email Server Error" variant="warning" size="small" />
+            <ErrorButton errorType="timeout" buttonText="Form Timeout" variant="outline" size="small" />
+          </div>
+
+          <div className="error-button-group">
+            <h4>Location & Map Errors</h4>
+            <ErrorButton errorType="api404" buttonText="Map API Error" variant="danger" size="small" />
+            <ErrorButton errorType="permissionError" buttonText="Location Access" variant="dark" size="small" />
+            <ErrorButton errorType="storageError" buttonText="Contact Storage" variant="outline" size="small" />
           </div>
         </div>
       </div>

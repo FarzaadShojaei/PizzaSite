@@ -1,4 +1,6 @@
 import React from 'react';
+import DownloadButton from '../components/DownloadButton';
+import ErrorButton from '../components/ErrorButton';
 import './About.css';
 
 const About = () => {
@@ -110,6 +112,22 @@ const About = () => {
             
             {/* Action Buttons with Different Selectors */}
             <div className="action-buttons">
+              <DownloadButton
+                fileName="company-brochure.pdf"
+                filePath="/images/company-brochure.pdf"
+                buttonText="Download Brochure"
+                variant="success"
+                size="medium"
+                icon="📄"
+              />
+              <DownloadButton
+                fileName="fastbite-menu.jpg"
+                filePath="/images/restaurant-menu.jpg"
+                buttonText="Download Menu"
+                variant="outline"
+                size="medium"
+                icon="🍽️"
+              />
               <button className="btn-outline">Learn More</button>
               <button id="careers-btn" data-page="careers">Join Our Team</button>
               <button className="btn-contact" data-action="contact">Contact Us</button>
@@ -160,6 +178,34 @@ const About = () => {
                 </div>
                 <button type="submit" data-submit-type="newsletter" className="newsletter-btn">Subscribe to Updates</button>
               </form>
+            </div>
+
+            {/* About Page Error Testing */}
+            <div className="error-section">
+              <h3>ℹ️ About Page Error Testing</h3>
+              <p>Test error scenarios for company information and forms:</p>
+              
+              <div className="error-button-group">
+                <h4>Form & Validation Errors</h4>
+                <ErrorButton errorType="validationError" buttonText="Form Validation" variant="warning" size="small" />
+                <ErrorButton errorType="authError" buttonText="Auth Required" variant="dark" size="small" />
+                <ErrorButton errorType="permissionError" buttonText="Access Denied" variant="danger" size="small" />
+              </div>
+
+              <div className="error-button-group">
+                <h4>Business Logic Errors (Simulated)</h4>
+                <ErrorButton errorType="api500" buttonText="Simulated Server Error" variant="warning" size="small" />
+                <ErrorButton errorType="timeout" buttonText="Simulated Timeout" variant="outline" size="small" />
+                <ErrorButton errorType="storageError" buttonText="Storage Full" variant="dark" size="small" />
+              </div>
+
+              <div className="error-button-group">
+                <h4>Real Server & Network Errors</h4>
+                <ErrorButton errorType="realApi500" buttonText="Real Server Error" variant="danger" size="small" />
+                <ErrorButton errorType="realTimeout" buttonText="Real Timeout" variant="danger" size="small" />
+                <ErrorButton errorType="realSlowApi" buttonText="Real Slow API" variant="warning" size="small" />
+                <ErrorButton errorType="realNetworkError" buttonText="Real Network Error" variant="outline" size="small" />
+              </div>
             </div>
           </section>
         </div>

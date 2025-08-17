@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ErrorButton from '../components/ErrorButton';
 import './Reviews.css';
 
 const Reviews = () => {
@@ -304,6 +305,28 @@ const Reviews = () => {
               <textarea name="suggestions" placeholder="Any suggestions for improvement?" rows="3" data-feedback="suggestions"></textarea>
               <input type="submit" value="Complete Survey" className="survey-submit" data-action="survey" />
             </form>
+          </div>
+
+          {/* Reviews Page Error Testing */}
+          <div className="error-section">
+            <h3>⭐ Reviews Page Error Testing</h3>
+            <p>Test error scenarios for reviews and ratings:</p>
+            
+            <div className="error-button-group">
+              <h4>Review System Errors</h4>
+              <ErrorButton errorType="validationError" buttonText="Review Validation" variant="warning" size="small" />
+              <ErrorButton errorType="authError" buttonText="Login Required" variant="dark" size="small" />
+              <ErrorButton errorType="api500" buttonText="Review Server Error" variant="warning" size="small" />
+              <ErrorButton errorType="storageError" buttonText="Review Storage Full" variant="outline" size="small" />
+            </div>
+
+            <div className="error-button-group">
+              <h4>Media & Upload Errors</h4>
+              <ErrorButton errorType="networkError" buttonText="Photo Upload Error" variant="danger" size="small" />
+              <ErrorButton errorType="memoryError" buttonText="Large File Error" variant="outline" size="small" />
+              <ErrorButton errorType="permissionError" buttonText="Photo Permission" variant="dark" size="small" />
+              <ErrorButton errorType="timeout" buttonText="Upload Timeout" variant="warning" size="small" />
+            </div>
           </div>
         </section>
       </div>

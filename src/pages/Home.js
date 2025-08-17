@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ErrorButton from '../components/ErrorButton';
 import './Home.css';
 
 const Home = () => {
@@ -134,6 +135,57 @@ const Home = () => {
             <button className="focus-demo">Focus Me</button>
             <button className="active-demo">Click & Hold</button>
             <button className="disabled-demo" disabled>Disabled State</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Error Testing Section */}
+      <section className="error-testing-section">
+        <div className="container">
+          <div className="error-section">
+            <h3>🧪 Error Testing Buttons</h3>
+            <p>Click these buttons to test different front-end error scenarios. Check the console for detailed error logs.</p>
+            
+            <div className="error-button-group">
+              <h4>JavaScript Runtime Errors</h4>
+              <ErrorButton errorType="generic" variant="danger" size="small" />
+              <ErrorButton errorType="reference" variant="danger" size="small" />
+              <ErrorButton errorType="type" variant="danger" size="small" />
+              <ErrorButton errorType="range" variant="danger" size="small" />
+            </div>
+
+            <div className="error-button-group">
+              <h4>Network & API Errors (Simulated)</h4>
+              <ErrorButton errorType="networkError" variant="warning" size="small" />
+              <ErrorButton errorType="api404" variant="warning" size="small" />
+              <ErrorButton errorType="api500" variant="warning" size="small" />
+              <ErrorButton errorType="timeout" variant="warning" size="small" />
+            </div>
+
+            <div className="error-button-group">
+              <h4>Real Network & Server Errors</h4>
+              <ErrorButton errorType="realNetworkError" variant="danger" size="small" />
+              <ErrorButton errorType="realApi404" variant="danger" size="small" />
+              <ErrorButton errorType="realApi500" variant="danger" size="small" />
+              <ErrorButton errorType="realTimeout" variant="danger" size="small" />
+              <ErrorButton errorType="realSlowApi" variant="warning" size="small" />
+              <ErrorButton errorType="realCorsError" variant="outline" size="small" />
+            </div>
+
+            <div className="error-button-group">
+              <h4>Application Logic Errors</h4>
+              <ErrorButton errorType="validationError" variant="dark" size="small" />
+              <ErrorButton errorType="authError" variant="dark" size="small" />
+              <ErrorButton errorType="permissionError" variant="dark" size="small" />
+              <ErrorButton errorType="stateError" variant="dark" size="small" />
+            </div>
+
+            <div className="error-button-group">
+              <h4>Performance & Memory Errors</h4>
+              <ErrorButton errorType="memoryError" variant="outline" size="small" />
+              <ErrorButton errorType="infiniteLoop" variant="outline" size="small" />
+              <ErrorButton errorType="storageError" variant="outline" size="small" />
+            </div>
           </div>
         </div>
       </section>
