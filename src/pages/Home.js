@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ErrorButton from '../components/ErrorButton';
 import './Home.css';
+import '../components/AddToCartButtons.css';
 
 const Home = () => {
   return (
@@ -41,26 +42,46 @@ const Home = () => {
         <div className="container">
           <h2>Our Menu Categories</h2>
           <div className="menu-categories">
-            <Link to="/burgers" className="category-card">
+            <div className="category-card">
               <div className="category-image">🍔</div>
               <h3>Burgers</h3>
               <p>Juicy burgers with premium ingredients</p>
-            </Link>
-            <Link to="/pizza" className="category-card">
+              <div className="category-actions">
+                <Link to="/burgers" className="view-menu-btn">View Menu</Link>
+                <button className="add-cart-primary" onClick={() => {}}>Add to Cart</button>
+                <button className="add-cart-secondary" onClick={() => {}}>Quick Add</button>
+              </div>
+            </div>
+            <div className="category-card">
               <div className="category-image">🍕</div>
               <h3>Pizza</h3>
               <p>Fresh pizza with authentic flavors</p>
-            </Link>
-            <Link to="/drinks" className="category-card">
+              <div className="category-actions">
+                <Link to="/pizza" className="view-menu-btn">View Menu</Link>
+                <button id="add-cart-special" onClick={() => {}}>Add to Cart</button>
+                <button data-cart="express" onClick={() => {}}>Express Add</button>
+              </div>
+            </div>
+            <div className="category-card">
               <div className="category-image">🥤</div>
               <h3>Drinks</h3>
               <p>Refreshing beverages and smoothies</p>
-            </Link>
-            <Link to="/desserts" className="category-card">
+              <div className="category-actions">
+                <Link to="/drinks" className="view-menu-btn">View Menu</Link>
+                <button className="add-cart-success" onClick={() => {}}>Add to Cart</button>
+                <button data-cart="quick" onClick={() => {}}>Quick Order</button>
+              </div>
+            </div>
+            <div className="category-card">
               <div className="category-image">🍰</div>
               <h3>Desserts</h3>
               <p>Sweet treats to end your meal perfectly</p>
-            </Link>
+              <div className="category-actions">
+                <Link to="/desserts" className="view-menu-btn">View Menu</Link>
+                <button className="add-cart-warning" onClick={() => {}}>Add to Cart</button>
+                <button id="add-cart-featured" onClick={() => {}}>Featured Add</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -72,28 +93,37 @@ const Home = () => {
           
           {/* Class Selector Buttons */}
           <div className="button-group class-selectors">
-            <h3>Class Selector Buttons</h3>
-            <button className="btn-primary">Primary Button</button>
-            <button className="btn-secondary">Secondary Button</button>
-            <button className="btn-success">Success Button</button>
-            <button className="btn-danger">Danger Button</button>
+            <h3>Class Selector Add to Cart Buttons</h3>
+            <button className="add-cart-primary" onClick={() => {}}>Add to Cart - Primary</button>
+            <button className="add-cart-secondary" onClick={() => {}}>Add to Cart - Secondary</button>
+            <button className="add-cart-success" onClick={() => {}}>Add to Cart - Success</button>
+            <button className="add-cart-danger" onClick={() => {}}>Add to Cart - Danger</button>
+            <button className="add-cart-warning" onClick={() => {}}>Add to Cart - Warning</button>
+            <button className="add-cart-dark" onClick={() => {}}>Add to Cart - Dark</button>
+            <button className="add-cart-outline" onClick={() => {}}>Add to Cart - Outline</button>
+            <button className="add-cart-minimal" onClick={() => {}}>Add to Cart - Minimal</button>
           </div>
 
           {/* ID Selector Buttons */}
           <div className="button-group id-selectors">
-            <h3>ID Selector Buttons</h3>
-            <button id="unique-btn-1" className="unique-button">Unique Button 1</button>
-            <button id="unique-btn-2" className="unique-button">Unique Button 2</button>
-            <button id="special-action-btn">Special Action</button>
+            <h3>ID Selector Add to Cart Buttons</h3>
+            <button id="add-cart-special" onClick={() => {}}>Add to Cart - Special</button>
+            <button id="add-cart-featured" onClick={() => {}}>Add to Cart - Featured</button>
+            <button id="add-cart-premium" onClick={() => {}}>Add to Cart - Premium</button>
+            <button id="add-cart-exclusive" onClick={() => {}}>Add to Cart - Exclusive</button>
+            <button id="add-cart-vip" onClick={() => {}}>Add to Cart - VIP</button>
           </div>
 
           {/* Attribute Selector Buttons */}
           <div className="button-group attribute-selectors">
-            <h3>Attribute Selector Buttons</h3>
-            <button data-action="save" data-priority="high">Save</button>
-            <button data-action="delete" data-priority="low">Delete</button>
-            <button data-category="navigation" data-style="modern">Navigate</button>
-            <button type="button" disabled>Disabled Button</button>
+            <h3>Attribute Selector Add to Cart Buttons</h3>
+            <button data-cart="express" onClick={() => {}}>Add to Cart - Express</button>
+            <button data-cart="quick" onClick={() => {}}>Add to Cart - Quick</button>
+            <button data-cart="instant" onClick={() => {}}>Add to Cart - Instant</button>
+            <button data-priority="high" onClick={() => {}}>Add to Cart - High Priority</button>
+            <button data-category="food" onClick={() => {}}>Add to Cart - Food</button>
+            <button data-style="modern" onClick={() => {}}>Add to Cart - Modern</button>
+            <input type="button" value="Add to Cart - Input" onClick={() => {}} />
           </div>
 
           {/* Form with Various Submit Types */}
@@ -117,7 +147,7 @@ const Home = () => {
                 <option value="drink">Drink</option>
               </select>
               <input type="number" name="quantity" min="1" max="10" value="1" />
-              <button type="submit" data-submit-type="order">Add to Cart</button>
+              <button type="submit" data-submit-type="order" className="add-cart-rounded" onClick={() => {}}>Add to Cart</button>
             </form>
 
             {/* Feedback Form */}
@@ -130,11 +160,12 @@ const Home = () => {
 
           {/* Pseudo-class Demonstration Buttons */}
           <div className="button-group pseudo-demo">
-            <h3>Hover, Focus & Active States</h3>
-            <button className="hover-demo">Hover Me</button>
-            <button className="focus-demo">Focus Me</button>
-            <button className="active-demo">Click & Hold</button>
-            <button className="disabled-demo" disabled>Disabled State</button>
+            <h3>Add to Cart - Special Effects</h3>
+            <button className="add-cart-glow" onClick={() => {}}>Add to Cart - Glow</button>
+            <button className="add-cart-gradient-border" onClick={() => {}}>Add to Cart - Gradient Border</button>
+            <button className="add-cart-rounded" onClick={() => {}}>Add to Cart - Rounded</button>
+            <button className="add-cart-square" onClick={() => {}}>Add to Cart - Square</button>
+            <button className="add-cart-primary" disabled>Add to Cart - Disabled</button>
           </div>
         </div>
       </section>

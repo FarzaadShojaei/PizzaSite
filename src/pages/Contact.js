@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ErrorButton from '../components/ErrorButton';
 import './Contact.css';
+import '../components/AddToCartButtons.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -168,6 +169,22 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
+        {/* Contact Page Add to Cart Options */}
+        <section className="contact-cart-section">
+          <h2>Order While You Contact Us</h2>
+          <p>Why not place an order while you're here?</p>
+          <div className="contact-cart-buttons">
+            <button className="add-cart-outline" onClick={() => {}}>Add Popular Item</button>
+            <button id="add-cart-exclusive" onClick={() => {}}>Add Daily Special</button>
+            <button data-cart="quick" onClick={() => {}}>Quick Order</button>
+            <button className="add-cart-minimal" onClick={() => {}}>Add Simple Meal</button>
+            <button data-category="food" onClick={() => {}}>Add Food Item</button>
+            <button className="add-cart-rounded" onClick={() => {}}>Add Favorite</button>
+            <input type="button" value="Add Contact Special" onClick={() => {}} />
+            <button data-style="modern" onClick={() => {}}>Add Modern Choice</button>
+          </div>
+        </section>
 
         {/* Contact Page Error Testing */}
         <div className="error-section">

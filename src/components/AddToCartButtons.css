@@ -1,0 +1,527 @@
+/* Add to Cart Button Styles - Various CSS Selectors */
+
+/* Class Selector Buttons */
+.add-cart-primary {
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+}
+
+.add-cart-secondary {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(74, 144, 226, 0.3);
+}
+
+.add-cart-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(40, 167, 69, 0.3);
+}
+
+.add-cart-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  color: #212529;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 7px rgba(255, 193, 7, 0.3);
+}
+
+.add-cart-danger {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 9px rgba(220, 53, 69, 0.3);
+}
+
+.add-cart-dark {
+  background: linear-gradient(135deg, #343a40, #495057);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(52, 58, 64, 0.3);
+}
+
+.add-cart-outline {
+  background: transparent;
+  color: #ff6b35;
+  border: 2px solid #ff6b35;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-cart-minimal {
+  background: #f8f9fa;
+  color: #495057;
+  border: 1px solid #dee2e6;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-cart-rounded {
+  background: linear-gradient(135deg, #6f42c1, #8a2be2);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(111, 66, 193, 0.3);
+}
+
+.add-cart-square {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3);
+}
+
+/* ID Selector Buttons */
+#add-cart-special {
+  background: linear-gradient(45deg, #e91e63, #ad1457);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(233, 30, 99, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#add-cart-featured {
+  background: linear-gradient(45deg, #9c27b0, #673ab7);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(156, 39, 176, 0.4);
+  animation: pulse 2s infinite;
+}
+
+#add-cart-premium {
+  background: linear-gradient(45deg, #ff9800, #f57c00);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(255, 152, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+#add-cart-exclusive {
+  background: linear-gradient(45deg, #795548, #5d4037);
+  color: white;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(121, 85, 72, 0.4);
+  border: 2px solid #8d6e63;
+}
+
+#add-cart-vip {
+  background: linear-gradient(45deg, #607d8b, #455a64);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(96, 125, 139, 0.4);
+  text-decoration: underline;
+}
+
+/* Attribute Selector Buttons */
+button[data-cart="express"] {
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  color: white;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 188, 212, 0.3);
+}
+
+button[data-cart="quick"] {
+  background: linear-gradient(135deg, #cddc39, #afb42b);
+  color: #212529;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(205, 220, 57, 0.3);
+}
+
+button[data-cart="instant"] {
+  background: linear-gradient(135deg, #ff5722, #d84315);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 87, 34, 0.3);
+}
+
+button[data-priority="high"] {
+  background: linear-gradient(135deg, #e53e3e, #c53030);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(229, 62, 62, 0.4);
+  animation: bounce 1s infinite;
+}
+
+button[data-category="food"] {
+  background: linear-gradient(135deg, #8bc34a, #689f38);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(139, 195, 74, 0.3);
+}
+
+button[data-style="modern"] {
+  background: linear-gradient(135deg, #3f51b5, #303f9f);
+  color: white;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(63, 81, 181, 0.3);
+  transform: skew(-5deg);
+}
+
+/* Type Selector Buttons */
+input[type="button"][value*="Add"] {
+  background: linear-gradient(135deg, #ff4081, #e91e63);
+  color: white;
+  border: none;
+  padding: 11px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(255, 64, 129, 0.3);
+}
+
+input[type="submit"][class*="cart"] {
+  background: linear-gradient(135deg, #009688, #00695c);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 150, 136, 0.3);
+}
+
+/* Pseudo-class Selectors */
+button:hover.add-cart-primary {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 107, 53, 0.4);
+  background: linear-gradient(135deg, #ff8c42, #ff6b35);
+}
+
+button:hover.add-cart-secondary {
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(74, 144, 226, 0.4);
+}
+
+button:active.add-cart-success {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+button:focus.add-cart-warning {
+  outline: 3px solid rgba(255, 193, 7, 0.5);
+  outline-offset: 2px;
+}
+
+/* Complex Selectors */
+.menu-item .add-cart-primary,
+.special-item .add-cart-primary {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.category-card > .add-cart-secondary {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.deal-card .add-cart-success + .price-info {
+  margin-top: 15px;
+}
+
+/* Child and Sibling Selectors */
+.button-group > button[class*="add-cart"] {
+  margin: 5px;
+  display: inline-block;
+}
+
+.product-actions button[data-cart] ~ .quantity-selector {
+  margin-left: 10px;
+}
+
+/* Descendant Selectors */
+.menu-page .menu-grid .menu-item button[class^="add-cart"] {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.home .hero button[id^="add-cart"] {
+  font-size: 20px;
+  padding: 18px 36px;
+}
+
+/* Animations and Effects */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  button[class*="add-cart"],
+  button[id*="add-cart"],
+  button[data-cart] {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .add-cart-rounded {
+    border-radius: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  button[class*="add-cart"],
+  button[id*="add-cart"],
+  button[data-cart] {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin: 3px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  button[class*="add-cart"],
+  button[id*="add-cart"],
+  button[data-cart] {
+    display: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  button[class*="add-cart"],
+  button[id*="add-cart"],
+  button[data-cart] {
+    border: 2px solid currentColor;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .add-cart-minimal {
+    background: #343a40;
+    color: #fff;
+    border-color: #495057;
+  }
+  
+  .add-cart-outline {
+    color: #ff8c42;
+    border-color: #ff8c42;
+  }
+}
+
+/* Special Effect Buttons */
+.add-cart-glow {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px rgba(102, 126, 234, 0.5); }
+  to { box-shadow: 0 0 30px rgba(102, 126, 234, 0.8), 0 0 40px rgba(118, 75, 162, 0.6); }
+}
+
+.add-cart-gradient-border {
+  background: white;
+  color: #333;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.add-cart-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(45deg, #ff6b35, #4a90e2, #28a745, #ffc107);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  z-index: -1;
+}
+
+/* Disabled States */
+button[class*="add-cart"]:disabled,
+button[id*="add-cart"]:disabled,
+button[data-cart]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Loading States */
+.add-cart-loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.add-cart-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

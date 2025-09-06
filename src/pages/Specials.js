@@ -2,6 +2,7 @@ import React from 'react';
 import MenuItem from '../components/MenuItem';
 import ErrorButton from '../components/ErrorButton';
 import './Specials.css';
+import '../components/AddToCartButtons.css';
 
 const Specials = () => {
   const todaySpecials = [
@@ -90,7 +91,7 @@ const Specials = () => {
                     <span className="special-price">${special.price}</span>
                     <span className="savings">Save ${(special.originalPrice - special.price).toFixed(2)}</span>
                   </div>
-                  <button className="order-special-btn">Order Now</button>
+                  <button className="add-cart-danger" onClick={() => {}}>Add Special to Cart</button>
                 </div>
               </div>
             ))}
@@ -221,6 +222,18 @@ const Specials = () => {
             <button id="notify-friends-btn" className="btn-share-deals" data-action="share">Share Deals with Friends</button>
             <button className="btn-calendar" data-feature="calendar" type="button">Add to Calendar</button>
             <button className="btn-favorites" data-action="favorite" data-list="specials">Save to Favorites</button>
+          </div>
+
+          {/* Specials Add to Cart Options */}
+          <div className="specials-cart-section">
+            <h3>Quick Add Special Deals</h3>
+            <button className="add-cart-warning" onClick={() => {}}>Add Today's Deal</button>
+            <button id="add-cart-special" onClick={() => {}}>Add Limited Time Offer</button>
+            <button data-priority="high" onClick={() => {}}>Add High Value Deal</button>
+            <button className="add-cart-glow" onClick={() => {}}>Add Flash Sale Item</button>
+            <button data-cart="instant" onClick={() => {}}>Instant Deal Order</button>
+            <button className="add-cart-success" onClick={() => {}}>Add Combo Special</button>
+            <input type="submit" value="Add Weekend Special" className="submit-cart" onClick={() => {}} />
           </div>
 
           {/* Feedback on Deals */}

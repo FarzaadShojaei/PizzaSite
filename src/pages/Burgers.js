@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuItem from '../components/MenuItem';
 import './MenuPage.css';
+import '../components/AddToCartButtons.css';
 
 const Burgers = () => {
   const burgerItems = [
@@ -61,6 +62,21 @@ const Burgers = () => {
             <MenuItem key={item.id} item={item} />
           ))}
         </div>
+
+        {/* Burger Quick Actions */}
+        <section className="burger-quick-actions">
+          <h2>Burger Combo Deals</h2>
+          <div className="quick-action-buttons">
+            <button className="add-cart-secondary" onClick={() => {}}>Add Burger Combo</button>
+            <button id="add-cart-featured" onClick={() => {}}>Featured Burger</button>
+            <button data-cart="quick" onClick={() => {}}>Quick Burger</button>
+            <button className="add-cart-danger" onClick={() => {}}>Spicy Burger Special</button>
+            <button id="add-cart-premium" onClick={() => {}}>Premium Burger</button>
+            <button className="add-cart-dark" onClick={() => {}}>Signature Burger</button>
+            <button className="add-cart-glow" onClick={() => {}}>Gourmet Burger</button>
+            <button data-cart="instant" onClick={() => {}}>Instant Burger</button>
+          </div>
+        </section>
       </div>
     </div>
   );

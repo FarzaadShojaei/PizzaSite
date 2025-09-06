@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import './Checkout.css';
+import '../components/AddToCartButtons.css';
 
 const Checkout = () => {
   const { cart, updateQuantity, removeFromCart, clearCart } = useCart();
@@ -86,6 +87,15 @@ const Checkout = () => {
               <div className="empty-cart">
                 <p>Your cart is empty</p>
                 <a href="/burgers" className="continue-shopping">Continue Shopping</a>
+                
+                {/* Quick Add Options for Empty Cart */}
+                <div className="quick-add-empty-cart">
+                  <h3>Quick Add Popular Items</h3>
+                  <button className="add-cart-primary" onClick={() => {}}>Add Popular Burger</button>
+                  <button id="add-cart-featured" onClick={() => {}}>Add Featured Pizza</button>
+                  <button data-cart="quick" onClick={() => {}}>Quick Meal Deal</button>
+                  <button className="add-cart-success" onClick={() => {}}>Add Family Pack</button>
+                </div>
               </div>
             ) : (
               <>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DownloadButton from '../components/DownloadButton';
 import ErrorButton from '../components/ErrorButton';
 import './Gallery.css';
+import '../components/AddToCartButtons.css';
 
 const GalleryImage = ({ item }) => {
   const [imageError, setImageError] = useState(false);
@@ -217,6 +218,18 @@ const Gallery = () => {
             <button id="share-gallery-btn" className="btn-share">Share Gallery</button>
             <button className="btn-slideshow" data-mode="slideshow" type="button">Start Slideshow</button>
             <button className="btn-fullscreen" data-view="fullscreen">View Fullscreen</button>
+          </div>
+
+          {/* Gallery Add to Cart Options */}
+          <div className="gallery-cart-actions">
+            <h3>Order What You See</h3>
+            <p>Inspired by our photos? Order these items now!</p>
+            <button className="add-cart-glow" onClick={() => {}}>Add Photo Special</button>
+            <button id="add-cart-premium" onClick={() => {}}>Add Premium Dish</button>
+            <button data-cart="instant" onClick={() => {}}>Instant Order</button>
+            <button className="add-cart-gradient-border" onClick={() => {}}>Add Gallery Featured</button>
+            <button data-priority="high" onClick={() => {}}>Add High Priority Item</button>
+            <button className="add-cart-dark" onClick={() => {}}>Add Signature Item</button>
           </div>
 
           {/* Photo Contest Form */}

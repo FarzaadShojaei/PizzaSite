@@ -2,6 +2,7 @@ import React from 'react';
 import DownloadButton from '../components/DownloadButton';
 import ErrorButton from '../components/ErrorButton';
 import './About.css';
+import '../components/AddToCartButtons.css';
 
 const About = () => {
   return (
@@ -132,6 +133,17 @@ const About = () => {
               <button id="careers-btn" data-page="careers">Join Our Team</button>
               <button className="btn-contact" data-action="contact">Contact Us</button>
               <button type="button" className="btn-franchise" data-category="business">Franchise Opportunities</button>
+            </div>
+
+            {/* About Page Add to Cart Buttons */}
+            <div className="about-cart-buttons">
+              <h3>Try Our Specialties</h3>
+              <button className="add-cart-primary" onClick={() => {}}>Add Chef's Special</button>
+              <button id="add-cart-featured" onClick={() => {}}>Add Featured Dish</button>
+              <button data-cart="express" onClick={() => {}}>Express Order</button>
+              <button className="add-cart-secondary" onClick={() => {}}>Add Restaurant Favorite</button>
+              <button data-priority="high" onClick={() => {}}>Add Signature Meal</button>
+              <button className="add-cart-success" onClick={() => {}}>Add Team Recommendation</button>
             </div>
 
             {/* Career Application Form */}

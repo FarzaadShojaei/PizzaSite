@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ErrorButton from '../components/ErrorButton';
 import './Reviews.css';
+import '../components/AddToCartButtons.css';
 
 const Reviews = () => {
   const [newReview, setNewReview] = useState({
@@ -240,6 +241,18 @@ const Reviews = () => {
             <button id="sort-reviews-btn" data-sort="date">Sort by Date</button>
             <button className="btn-export" data-export="reviews" type="button">Export Reviews</button>
             <button className="btn-moderate" data-role="admin" disabled>Moderate Reviews</button>
+          </div>
+
+          {/* Reviews Page Add to Cart */}
+          <div className="reviews-cart-section">
+            <h3>Try Reviewed Items</h3>
+            <p>Order the items our customers love most!</p>
+            <button className="add-cart-success" onClick={() => {}}>Add Top Rated Item</button>
+            <button id="add-cart-vip" onClick={() => {}}>Add Customer Favorite</button>
+            <button data-cart="express" onClick={() => {}}>Express Popular Order</button>
+            <button className="add-cart-square" onClick={() => {}}>Add 5-Star Special</button>
+            <button data-category="food" onClick={() => {}}>Add Reviewed Food</button>
+            <button className="add-cart-warning" onClick={() => {}}>Add Trending Item</button>
           </div>
 
           {/* Quick Rating Form */}

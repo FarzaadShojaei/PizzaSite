@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuItem from '../components/MenuItem';
 import './MenuPage.css';
+import '../components/AddToCartButtons.css';
 
 const Drinks = () => {
   const drinkItems = [
@@ -61,6 +62,21 @@ const Drinks = () => {
             <MenuItem key={item.id} item={item} />
           ))}
         </div>
+
+        {/* Drinks Quick Actions */}
+        <section className="drinks-quick-actions">
+          <h2>Beverage Combos</h2>
+          <div className="quick-action-buttons">
+            <button className="add-cart-outline" onClick={() => {}}>Add Refreshing Drink</button>
+            <button id="add-cart-exclusive" onClick={() => {}}>Exclusive Smoothie</button>
+            <button data-cart="express" onClick={() => {}}>Express Drink</button>
+            <button className="add-cart-minimal" onClick={() => {}}>Simple Beverage</button>
+            <button id="add-cart-vip" onClick={() => {}}>VIP Drink Package</button>
+            <button className="add-cart-rounded" onClick={() => {}}>Fresh Juice</button>
+            <button className="add-cart-gradient-border" onClick={() => {}}>Premium Beverage</button>
+            <input type="submit" value="Add Drink Combo" className="submit-cart" onClick={() => {}} />
+          </div>
+        </section>
       </div>
     </div>
   );
